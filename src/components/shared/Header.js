@@ -1,7 +1,36 @@
 import React, { Component } from "react";
+import { Link, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import * as actions from "../../actions";
 import "../../App.css";
 
 class Header extends Component {
+
+   handleLogout = () => {
+    this.props.dispatch(actions.logout());
+   
+  };
+
+  renderAuthButtons = () => {
+    const { isAuth } = this.props.auth;
+
+    if (isAuth) {
+      return (
+        <button className="f6 dib black bg-animate hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--black-20 " onClick={this.handleLogout}>
+          Logout
+        </button>
+      );
+    }
+
+    return (
+      <React.Fragment >
+        <Link className="f6 dib black bg-animate hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--black-20" to="/login">
+          Login 
+       </Link>
+      </React.Fragment>
+    );
+  };
+
   render() {
     return (
       <nav className="flex justify-between header bb b--white-10">
@@ -20,16 +49,18 @@ class Header extends Component {
           </svg>
         </a>
         <div className="flex-grow pa3 flex items-center">
-          <a
-            className="f6 dib black bg-animate hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--black-20"
-            href="#0"
-          >
-            Sign In
-          </a>
+           {this.renderAuthButtons()}
         </div>
       </nav>
     );
   }
 }
 
-export default Header;
+function mapStateToProps(state) {
+  return {
+    auth: state.authReducer
+  }
+}
+
+export default withRouter(connect(mapStateToProps)(Header));
+

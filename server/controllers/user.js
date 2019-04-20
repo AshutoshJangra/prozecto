@@ -33,16 +33,12 @@ exports.auth = (req,res)=> {
 }
 
 exports.register = (req,res) =>{
-    const {username, email , password , confirmPassword} = req.body ;
+    const {username, email , password } = req.body ;
 
     if(!email || !password){
         return res.status(422).send({error : {title:"Data missing!" , detail: "Provide email and password"}});
     }
-
-    if(password !== confirmPassword){
-        return res.status(422).send({error : {title:"Invalid Password!" , detail: "Password is not same as confirm password"}});
-    }
-
+    
     User.findOne({email} , (err , foundUser)=>{
         if(err){
             return res.status(422).send({error : "error in finding user by email"});

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "../shared/Header";
 import "../../App.css";
-import Login from "../login/Login";
+import Register from "../register/Register";
 
 import Working from "./Working";
 
@@ -30,7 +30,7 @@ class MainPage extends Component {
         </div>
 
           <div className="register-form f1 w-100-ns w-50-l pl5-ns pr5-ns">
-            <Login />
+            <Register />
           </div>
         </div>
 
