@@ -1,33 +1,102 @@
-.App {
-  text-align: center;
+h1 {
+    font-size: 100px;
+}
+*{
+    font-family: "Trebuchet ", Helvetica, sans-serif;
+}
+.dark-theme {
+    background-color: #1a2b34;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.light-theme{
+    background-color: #fff;
+}
+code {
+    font-style: italic;
+    background-color: black;
+    color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+code .container {
+    min-width: 200px;
+    min-height: 100px;
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+    background-color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*main page */
+.main-showcase .tag-line {
+    font-size: 4rem;
+    font-weight: 100px;
+}
+
+.main-showcase .description {
+    margin: 10px 80x;
+}
+
+.primary-btn .btn {
+    margin: 35px 25px;
+}
+
+@media only screen and (max-width: 361px) {
+    .main-showcase .tag-line {
+        font-size: 4rem;
+    }
+    .main-showcase .description {
+        margin: 10px 25px;
+    }
+    .primary-btn .btn {
+        margin: 15px 35px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 361px && max-width:680px) {
+    .main-showcase .tag-line {
+        font-size: 5rem;
+    }
+    .main-showcase .description {
+        margin: 10px 50px;
+    }
+}
+
+.input-area {
+    height: 40px;
+}
+
+.btn-pro {
+    background-color: #f28267;
+}
+
+/*How it works */
+.working-area {
+    text-align: center;
+}
+.text {
+    text-align: center;
+    align-items: center;
+    font-size: 18px;
+    line-height: 26px;
+    font-family: Roboto;
+}
+
+.work-card {
+    padding: 50px 20px 20px 20px;
+
+    text-align: center;
+    align-items: center;
+}
+
+.work-card h3 {
+    font-size: 20px;
+}
+
+.work-card p {
+    font-size: 19px;
+    letter-spacing: 0.1px;
+    line-height: 26px;
 }

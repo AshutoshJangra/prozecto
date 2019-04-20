@@ -1,0 +1,97 @@
+const User = require('../models/user');
+const jwt = require('jsonwebtoken');
+
+exports.auth = (req,res)=> {
+    const {email , password} = req.body ;
+    
+    if(!email || !password){
+        return res.status(422).send({error : {title:"Data missing!" , detail: "Provide email and password"}});
+    }
+
+    User.findOne({email}, (err, user) => {
+        if(err){
+            return res.status(422).send({error : "error findig user during login"});
+        }
+
+        if(!user){
+            return res.status(422).send({error : "user does not exist"});
+        }
+
+        if (user.hasSamePassword(password)) {
+            const token = jwt.sign({
+              userId: user.id,
+              username: user.username
+            }, "secret", { expiresIn: '1h'});
+      
+            return res.json(token);
+          } else {
+            return res.status(422).send({errors: [{title: 'Wrong Data!', detail: 'Wrong email or password'}]});
+          }
+    });     
+
+    
+}
+
+exports.register = (req,res) =>{
+    const {username, email , password , confirmPassword} = req.body ;
+
+    if(!email || !password){
+        return res.status(422).send({error : {title:"Data missing!" , detail: "Provide email and password"}});
+    }
+
+    if(password !== confirmPassword){
+        return res.status(422).send({error : {title:"Invalid Password!" , detail: "Password is not same as confirm password"}});
+    }
+
+    User.findOne({email} , (err , foundUser)=>{
+        if(err){
+            return res.status(422).send({error : "error in finding user by email"});
+        }
+
+        if(foundUser){
+            return res.status(422).send({error : "User with this email already exist"});
+        }
+
+        const user = new User({username , email , password}) ;
+
+        user.save((err) => {
+            if(err){
+                return res.status(422).send({error : "error in registering the user"});
+            }
+
+            return res.json({'registered':true});
+        })
+        
+    })
+}
+
+exports.authMiddleware = function(req, res, next) {
+  const token = req.headers.authorization;
+
+  if (token) {
+    const user = parseToken(token);
+
+    User.findById(user.userId, function(err, user) {
+      if (err) {
+        return res.status(422).send({"errors": "User not found in authorization"});
+      }
+
+      if (user) {
+        res.locals.user = user;
+        next();
+      } else {
+        return notAuthorized(res);
+      }
+    })
+  } else {
+    return notAuthorized(res);
+  }
+}
+
+function parseToken(token) {
+  return jwt.verify(token.split(' ')[1], config.SECRET);
+}
+
+function notAuthorized(res) {
+  return res.status(401).send({errors: [{title: 'Not authorized!', detail: 'You need to login to get access!'}]});
+}
