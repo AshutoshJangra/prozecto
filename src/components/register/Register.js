@@ -47,18 +47,20 @@ class Register extends Component {
 
 		{
 			
-		if (redirect) {
-      return (
-        <Redirect
-          to={{ pathname: "/login", state: { successRegister: true } }}
-        />
-      );
-    }
-
+			if (redirect) {
+				return (
+					<Redirect
+						to={{
+							pathname: "/login",
+							state: { successRegister: true }
+						}}
+					/>
+				);
+			}
 		}
 
 		return (
-			<div className=" f2 pa2 pb4	 sans-serif">
+			<div className=" f2 pa2 pb4	w-60-ns pt3 pl7-ns ml6-ns pl5-m ml6-m  sans-serif">
 				<h3 className="f2-ns f4 mid-gray fw4 ">Get Started For Free</h3>
 				<label className="f4 fw1 mid-gray">Username</label>
 				<input

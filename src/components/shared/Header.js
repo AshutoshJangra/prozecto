@@ -5,30 +5,65 @@ import * as actions from "../../actions";
 import "../../App.css";
 
 class Header extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isHome: true
 
-   handleLogout = () => {
-    this.props.dispatch(actions.logout());
-   
+    }
+  }
+
+  changeRoute = () => {
+     this.setState(prevState => ({
+      isHome: !this.state.isHome
+     }));
+  }
+
+  handleLogout = () => {
+    this.props.logout();
   };
 
   renderAuthButtons = () => {
     const { isAuth } = this.props.auth;
+    const {isHome} = this.state;
 
     if (isAuth) {
       return (
-        <button className="f6 dib black bg-animate hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--black-20 " onClick={this.handleLogout}>
+        <button
+          className="f6 dib black bg-animate hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--black-20 "
+          onClick={this.handleLogout}
+        >
           Logout
         </button>
       );
+    }else if(isHome){
+      return(
+         <React.Fragment>
+         <Link
+            className="f6 dib black bg-animate hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--black-20"
+            to="/login"
+            onClick={this.changeRoute}
+        >
+          Login
+        </Link>
+         </React.Fragment>
+        );
+    }else if(isHome === false){
+      return(
+         <React.Fragment>
+        <Link
+          className="f6 dib black bg-animate hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--black-20"
+          to="/register"
+          onClick={this.changeRoute}
+        >
+          register
+        </Link>
+         </React.Fragment>
+        );
     }
 
-    return (
-      <React.Fragment >
-        <Link className="f6 dib black bg-animate hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--black-20" to="/login">
-          Login 
-       </Link>
-      </React.Fragment>
-    );
+
+
   };
 
   render() {
@@ -49,7 +84,7 @@ class Header extends Component {
           </svg>
         </a>
         <div className="flex-grow pa3 flex items-center">
-           {this.renderAuthButtons()}
+          {this.renderAuthButtons()}
         </div>
       </nav>
     );
@@ -59,8 +94,7 @@ class Header extends Component {
 function mapStateToProps(state) {
   return {
     auth: state.authReducer
-  }
+  };
 }
 
 export default withRouter(connect(mapStateToProps)(Header));
-

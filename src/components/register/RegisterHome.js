@@ -4,17 +4,24 @@ import { Redirect } from "react-router-dom";
 import * as actions from "../../actions";
 import "../../App.css";
 
-class Login extends Component {
+class RegisterHome extends Component {
 	constructor() {
 		super();
 		this.state = {
+			username: "",
 			email: "",
-			password: ""
+			password: "",
+
+			redirect: false,
+			errors: []
 		};
 	}
 
 	formChange = event => {
 		switch (event.target.name) {
+			case "username":
+				this.setState({ username: event.target.value });
+				break;
 			case "email":
 				this.setState({ email: event.target.value });
 				break;
@@ -26,23 +33,42 @@ class Login extends Component {
 		}
 	};
 
-	loginUser = userData => {
-		this.props.dispatch(actions.login(this.state));
-		console.log(this.state);
+	registerUser = userData => {
+		actions
+			.register(this.state)
+			.then(
+				registered => this.setState({ redirect: true }),
+				errors => this.setState({ errors })
+			);
 	};
 
 	render() {
-		const { isAuth, errors } = this.props.auth;
+		const { errors, redirect } = this.state;
 
-		
-		if (isAuth) {
-			return <Redirect to={{ pathname: "/" }} />;
+		{
+			
+			if (redirect) {
+				return (
+					<Redirect
+						to={{
+							pathname: "/login",
+							state: { successRegister: true }
+						}}
+					/>
+				);
+			}
 		}
 
 		return (
-			<div className=" f2 w-60-ns pa2 pt3 pl7-ns ml6-ns pl5-m ml6-m  sans-serif">
-				<h3 className="f2-ns f4 mid-gray fw4 ">Login to your Account</h3>
-
+			<div className=" f2 pa2 pb4	sans-serif">
+				<h3 className="f2-ns f4 mid-gray fw4 ">Get Started For Free</h3>
+				<label className="f4 fw1 mid-gray">Username</label>
+				<input
+					className="input-area w-100 ba b--light-silver pa2 f5 "
+					type="text"
+					name="username"
+					onChange={this.formChange}
+				/>
 				<label className="f4 fw1 mid-gray">Email</label>
 				<input
 					className="input-area w-100 ba b--light-silver pa2 f5  "
@@ -60,19 +86,13 @@ class Login extends Component {
 
 				<button
 					className="btn-pro w-100 pa2 mt4 f4 fw1 bn near-white"
-					onClick={this.loginUser}
+					onClick={this.registerUser}
 				>
-					Log In
+					Start making projects
 				</button>
 			</div>
 		);
 	}
 }
 
-function mapStateToProps(state) {
-	return {
-		auth: state.authReducer
-	};
-}
-
-export default connect(mapStateToProps)(Login);
+export default RegisterHome;
