@@ -15,7 +15,7 @@ class Dashboard extends Component {
 
   render() {
     return (
-     <Router>
+     <Router basename="/prozecto">
       
       <div className="dashboard">
         <div className="mb3 w-100"> 

@@ -41,7 +41,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router>
+        <Router basename="/prozecto">
           <div className="App ">
             <Header logout={this.logout} />
             <Route exact path="/" component={MainPage} />
