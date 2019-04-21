@@ -1,5 +1,5 @@
 const INIT_STATE = {
-  rentals: {
+  problems: {
     data: []
   },
   rental: {
@@ -7,9 +7,9 @@ const INIT_STATE = {
   }
 };
 
-export const rentalReducer = (state = INIT_STATE.rentals, action) => {
+export const problemReducer = (state = INIT_STATE.problems, action) => {
   switch (action.type) {
-    case "FETCH_RENTALS_SUCCESS":
+    case "FETCH_PROBLEMS_SUCCESS":
       return { ...state, data: action.payload };
     default:
       return state;

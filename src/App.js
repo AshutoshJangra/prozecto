@@ -4,9 +4,11 @@ import Header from "./components/shared/Header";
 import ProblemListing from "./components/problemsListing/ProblemListing";
 import "./App.css";
 
+import Dashboard from './components/dashboard/Dashboard';
+
+
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
-
 
 import { ProtectedRoute } from "./components/shared/auth/ProtectedRoute";
 import { LoggedInRoute } from "./components/shared/auth/LoggedInRoute";
@@ -41,16 +43,18 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App ">
-           <Header logout={this.logout} />
-          <Route exact path="/" component={MainPage} />
-           
+            <Header logout={this.logout} />
+            <Route exact path="/" component={MainPage} />
 
-            <Route exact path="/login" component={Login} />
+            
+              <Route exact path="/login" component={Login} />
+            
             <LoggedInRoute exact path="/register" component={Register} />
 
-            <div className="problem-section ">
-              <ProblemListing />
-            </div>
+            <Route exact path="/dashboard" component={Dashboard} />
+           
+
+      
           </div>
         </Router>
       </Provider>

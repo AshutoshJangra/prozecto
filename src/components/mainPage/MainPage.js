@@ -3,6 +3,7 @@ import "../../App.css";
 import RegisterHome from "../register/RegisterHome";
 
 import Working from "./Working";
+import Why from './Why';
 
 class MainPage extends Component {
   render() {
@@ -33,9 +34,12 @@ class MainPage extends Component {
         </div>
 
         {/*How it works*/}
-        <div className="light-theme">
           <Working />
-        </div>
+
+        {/*why prozecto*/}
+         <Why />
+
+
       </div>
     );
   }

@@ -1,12 +1,12 @@
 import * as redux from "redux";
-import { rentalReducer } from "./Rental-Reducer";
-import { selectedRentalReducer } from "./Rental-Reducer";
+import { problemReducer } from "./Problem-Reducer";
+import { selectedRentalReducer } from "./Problem-Reducer";
 import { authReducer } from "./auth-reducer";
 import thunk from "redux-thunk";
 
 export const init = () => {
   const reducer = redux.combineReducers({
-    rentalReducer,
+    problemReducer,
     selectedRentalReducer,
     authReducer
   });

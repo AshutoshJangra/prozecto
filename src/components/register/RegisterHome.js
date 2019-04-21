@@ -60,11 +60,11 @@ class RegisterHome extends Component {
 		}
 
 		return (
-			<div className=" f2 pa2 pb4	sans-serif">
+			<div className=" f2 pa3 pb4	sans-serif">
 				<h3 className="f2-ns f4 mid-gray fw4 ">Get Started For Free</h3>
 				<label className="f4 fw1 mid-gray">Username</label>
 				<input
-					className="input-area w-100 ba b--light-silver pa2 f5 "
+					className="input-area w-100 ba b--light-silver pa2 f5  "
 					type="text"
 					name="username"
 					onChange={this.formChange}
@@ -85,7 +85,7 @@ class RegisterHome extends Component {
 				/>
 
 				<button
-					className="btn-pro w-100 pa2 mt4 f4 fw1 bn near-white"
+					className="btn-pro w-100 pa2 mt4 f4 fw1 bn near-white "
 					onClick={this.registerUser}
 				>
 					Start making projects

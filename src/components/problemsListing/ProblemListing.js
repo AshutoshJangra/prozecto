@@ -1,38 +1,32 @@
 import React, { Component } from "react";
-import ProblemCard from "./ProblemCard";
+import ProblemDisplay from "../dashboard/ProblemDisplay";
 
-import axios from "axios";
+import { connect } from "react-redux";
+import * as actions from "../../actions";
 
 class ProblemListing extends Component {
-  constructor() {
-    super();
-    this.state = {
-      problems: []
-    };
-  }
 
   componentWillMount() {
-    this.getProblems();
+    this.props.dispatch(actions.fetchProblems());
+    
   }
-
-  getProblems = () => {
-    axios
-      .get("/api/v1")
-      .then(
-        res => this.setState({ problems: res.data }),
-        err => Promise.reject(err.response.data.errors)
-      );
-  };
 
   render() {
     return (
-      <div className=" bg-near-white">
-        {this.state.problems.map(problem => (
-          <ProblemCard problem={problem} key={problem._id} />
+      <div className=" bg-white">
+        {this.props.problems.map(problem => (
+          <ProblemDisplay problem={problem} key={problem._id} />
         ))}
       </div>
     );
   }
 }
 
-export default ProblemListing;
+const mapStateToProps = state => {
+  return {
+    problems: state.problemReducer.data
+  };
+};
+
+export default connect(mapStateToProps)(ProblemListing);
+

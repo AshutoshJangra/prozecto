@@ -60,36 +60,49 @@ class Register extends Component {
 		}
 
 		return (
-			<div className=" f2 pa2 pb4	w-60-ns pt3 pl7-ns ml6-ns pl5-m ml6-m  sans-serif">
+			<div className=" f2 pa4 pb4	w-50-l pt0 pl7-ns ml6-ns pl5-m ml6-m  sans-serif">
 				<h3 className="f2-ns f4 mid-gray fw4 ">Get Started For Free</h3>
 				<label className="f4 fw1 mid-gray">Username</label>
 				<input
-					className="input-area w-100 ba b--light-silver pa2 f5 "
+					className="input-area w-100 ba b--light-silver pa2 f5 br-pill"
 					type="text"
 					name="username"
 					onChange={this.formChange}
 				/>
 				<label className="f4 fw1 mid-gray">Email</label>
 				<input
-					className="input-area w-100 ba b--light-silver pa2 f5  "
+					className="input-area w-100 ba b--light-silver pa2 f5 br-pill "
 					type="email"
 					name="email"
 					onChange={this.formChange}
 				/>
 				<label className="f4 fw1 mid-gray">Password</label>
 				<input
-					className="input-area w-100 pa2 f5 ba b--light-silver "
+					className="input-area w-100 pa2 f5 ba b--light-silver br-pill"
 					type="password"
 					name="password"
 					onChange={this.formChange}
 				/>
 
 				<button
-					className="btn-pro w-100 pa2 mt4 f4 fw1 bn near-white"
+					className="btn-pro w-100 pa2 mb2 mt4 f4 fw1 bn near-white br-pill"
 					onClick={this.registerUser}
 				>
 					Start making projects
 				</button>
+
+				<hr />
+
+				<h2 className="tc f5 fw2 mid-gray">or Sign in with</h2>
+
+				<div className="flex justify-around">
+					<img src="https://img.icons8.com/color/40/000000/facebook.png" />
+
+					<img src="https://img.icons8.com/color/40/000000/twitter.png" />
+					<img src="https://img.icons8.com/color/40/000000/google.png" />
+					<img src="https://img.icons8.com/color/40/000000/instagram.png" />
+					
+				</div>
 			</div>
 		);
 	}

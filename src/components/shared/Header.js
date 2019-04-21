@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import * as actions from "../../actions";
+
 import "../../App.css";
 
 class Header extends Component {
@@ -30,7 +30,7 @@ class Header extends Component {
     if (isAuth) {
       return (
         <button
-          className="f6 dib black bg-animate hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--black-20 "
+          className="f6 dib black bg-animate bg-white hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--black-20 "
           onClick={this.handleLogout}
         >
           Logout

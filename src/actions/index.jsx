@@ -8,18 +8,18 @@ import axiosService from '../services/axios-service';
 
 const axiosInstance = axiosService.getInstance();
 
-export const fetchRentalsSuccess = (rentals) => {
+export const fetchProblemsSuccess = (problems) => {
   return {
-    type: "FETCH_RENTALS_SUCCESS",
-    payload: rentals
+    type: "FETCH_PROBLEMS_SUCCESS",
+    payload: problems
   };
 };
 
-export const fetchRentals = () => {
+export const fetchProblems = () => {
   return dispatch =>  {
-    axiosInstance.get('rentals')
+    axios.get('/api/v1/')
     .then(res => res.data)
-    .then(rentals => dispatch(fetchRentalsSuccess(rentals)) 
+    .then(problems => dispatch(fetchProblemsSuccess(problems)) 
     );
   }
 }
