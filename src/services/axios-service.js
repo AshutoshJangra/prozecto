@@ -9,10 +9,10 @@ class AxiosService {
     this.initInstance();
   }
 
-  initInstance() {
+  initInstance () {
     this.axiosInstance = axios.create({
       baseURL: '/api/v1',
-      timeout: 1000
+      timeout: 2000
     });
 
     this.axiosInstance.interceptors.request.use(
@@ -29,7 +29,8 @@ class AxiosService {
     return this.axiosInstance;
   }
 
-  getInstance() {
+  getInstance () {
+
     return this.axiosInstance || this.initInstance();
   }
 }

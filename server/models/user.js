@@ -22,7 +22,8 @@ const userSchema = new Schema({
         max:[32,"Too long, max is 32 characers"],
         required:"Password is required"
     },
-    problems:[{type:Schema.Types.ObjectId, ref: "Problem"}]
+    current: {type:Schema.Types.ObjectId, ref: 'Project'},
+    projects:[{type:Schema.Types.ObjectId, ref: 'Project'}]
 
 });
 

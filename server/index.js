@@ -1,7 +1,8 @@
 const express = require('express') ;
 const bodyParser = require('body-parser');
-const problemsRoutes = require('./routes/problems'),
-      usersRoutes = require('./routes/users') ;
+const projectsRoutes = require('./routes/projects'),
+      usersRoutes = require('./routes/users'),
+      blogsRoutes = require('./routes/blogs');
 
 
 const mongoose = require('mongoose') ;
@@ -12,9 +13,13 @@ app.use(bodyParser.json());
 
 mongoose.connect('mongodb://ashutosh:Deception1@ds111765.mlab.com:11765/boatel' ,{ useNewUrlParser: true } )
 
-app.use('/api/v1/' , problemsRoutes);
+app.use('/api/v1/projects' , projectsRoutes);
 app.use('/api/v1/user' , usersRoutes);
+app.use('/api/v1/blogs', blogsRoutes);
 
-app.listen('3001' , () => {
-    console.log("app is running on 3001")
+const PORT = process.env.PORT || '3001' ;
+
+
+app.listen(PORT , () => {
+    console.log(`app is running on ${PORT}`);
 })

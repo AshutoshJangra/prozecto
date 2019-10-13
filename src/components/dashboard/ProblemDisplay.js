@@ -1,34 +1,48 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import "../../App.css";
+import image from "../../images/image.jfif";
+
+import { Link } from "react-router-dom";
+
+const limitProjectTitle = (title, limit = 15) => {
+	const newTitle = [];
+	if (title.length > limit) {
+		title.split(" ").reduce((acc, cur) => {
+			if (acc + cur.length <= limit) {
+				newTitle.push(cur);
+			}
+			return acc + cur.length;
+		}, 0);
+
+		// return the result
+		return `${newTitle.join(" ")} ...`;
+	}
+	return title;
+};
+
 class ProblemDisplay extends Component {
-
-   
 	render() {
-		const { title, description, grade } = this.props.problem;
-		
+		let { title, description, slug ,level , concept} = this.props.project;
+		title = limitProjectTitle(title);
+        
 		return (
-			<div className="pa4 h helvetica lh-copy pt2">
-				<h2 className="f3 near-black">{title}</h2>
-				
-				<div dangerouslySetInnerHTML={{ __html: description }} className="helvetica lh-copy pb4" /> 
+			<Link className="no-underline" to={`p/${slug}`}>
+				<div className="project-card ba b--light-gray grow mr3 mt4 fw1 white">
+					<div className="image ">
+						<img src={image} alt="img" />
+					</div>
 
-				<hr/>
+					<div className="card-text pa2">
+						<h2 className="f7 pa1  ">{title}</h2>
+						<h4 className="f7 pa1 fw1">0/7 Completed</h4>
 
-				<h2 className="f3 near-black">You will </h2>
-				<ul>
-				  <li className="pt1 pb1">Understand the ideas of slope and y-intercept within the context of Domino’s pizza pricing</li>
-				  <li className="pt1 pb1">Write and graph a linear equation given two points on the line</li>
-				  <li className="pt1 pb1">Understand what it means for a function to be linear (constant rate of change)</li>
-                </ul>
-
-                <hr/>
-
-                <h2 className="f3 near-black">Before you begin</h2>
-				<p>You should be able to calculate a unit rate (e.g. “cost per topping”). As this lesson is meant to be introductory, no prior knowledge of linear functions is assumed.</p>
-
-
-			</div>
+						<h4 className="f7 pa1  fw1">{level}</h4>
+						<h4 className="f7 pa1 fw2">{concept}</h4>
+					</div>
+				</div>
+			</Link>
 		);
 	}
 }

@@ -1,16 +1,20 @@
-h1 {
-    font-size: 100px;
-}
-*{
-    font-family: "Trebuchet ", Helvetica, sans-serif;
+
+* {
+    line-height: 1.7;
+    letter-spacing: 1.6px;
+    font-family: "Montserrat", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+   
 }
 .dark-theme {
     background-color: #1a2b34;
 }
 
-.light-theme{
+.light-theme {
     background-color: #fff;
 }
+
 code {
     font-style: italic;
     background-color: black;
@@ -24,79 +28,100 @@ code .container {
 
 .header {
     background-color: #fff;
+    height: 50px;
+}
+
+.register-btn{
+    background: #07bc4c;
+    color: white;
 }
 
 /*main page */
-.main-showcase .tag-line {
-    font-size: 4rem;
-    font-weight: 100px;
+
+.side-menu{
+    
+    width: 300px;
+    background: #fff;
 }
 
-.main-showcase .description {
-    margin: 10px 80x;
+.logo{
+    color: #08c65b;
+    margin-left:3vw; 
 }
 
-.primary-btn .btn {
-    margin: 35px 25px;
+.footer{
+    position: absolute;
+    bottom: 0;
+    margin-left: 4.5vw; 
 }
 
-@media only screen and (max-width: 361px) {
-    .main-showcase .tag-line {
-        font-size: 4rem;
-    }
-    .main-showcase .description {
-        margin: 10px 25px;
-    }
-    .primary-btn .btn {
-        margin: 15px 35px;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-    }
+.main-area{
+    width: 65vw;
 }
 
-@media only screen and (min-width: 361px && max-width:680px) {
-    .main-showcase .tag-line {
-        font-size: 5rem;
-    }
-    .main-showcase .description {
-        margin: 10px 50px;
-    }
+.dashboard{
+     background: #fff;
+     padding: 1vh 0vw 0vh 1vh;
 }
 
-.input-area {
-    height: 40px;
+.dashboard::-webkit-scrollbar {
+    width: 0px !important;  /* Remove scrollbar space */
+    display: none;
 }
 
-.btn-pro {
-    background-color: #f28267;
+/* SCROLL BAR VISIBLITY */
+.scroll{ 
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 90vh;
 }
 
-/*How it works */
-.working-area {
-    text-align: center;
-}
-.text {
-    text-align: center;
-    align-items: center;
-    font-size: 18px;
-    line-height: 26px;
-    font-family: Roboto;
+.scroll::-webkit-scrollbar {
+    width: 0px !important;  /* Remove scrollbar space */
+    display: none;
 }
 
-.work-card {
-    padding: 50px 20px 20px 20px;
 
-    text-align: center;
-    align-items: center;
+.project-card{
+    background: linear-gradient(to bottom right, #68e397, #69faa1);
+    background: white;
+    color:black;
+    max-width: 200px;
 }
 
-.work-card h3 {
-    font-size: 20px;
+
+.right-area{
+     margin: 2vh 4vh 0vh 2vh;
+     display: flex;
+     flex-direction: column;
+     text-align: center;
+     align-items: center;
+     justify-content: center;
+     max-width: 30vw;
+   
+     padding: 20px;
+
+    
 }
 
-.work-card p {
-    font-size: 19px;
-    letter-spacing: 0.1px;
-    line-height: 26px;
+.active{
+    color: #000 !important; 
+}
+
+.links{
+   margin-left:4vw; 
+   margin-top: 8vh;
+}
+
+ .link:focus{
+    outline: none;
+}
+
+ .link:hover{
+     color:#000;
+}
+
+/* background color of container before displaying project detail */
+.white-bg{
+    background: #f8f8f8 ;
 }

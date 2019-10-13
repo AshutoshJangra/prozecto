@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import MainPage from "./components/mainPage/MainPage";
 import Header from "./components/shared/Header";
-import ProblemListing from "./components/problemsListing/ProblemListing";
+import ProblemListing from "./components/projectsListing/ProjectListing";
 import "./App.css";
 
-import Dashboard from './components/dashboard/Dashboard';
-
+import Dashboard from "./components/dashboard/Dashboard";
+import ProjectDetail from "./components/dashboard/ProjectDetail";
 
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
@@ -41,17 +41,23 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router basename="/prozecto">
+        <Router basename="/">
           <div className="App ">
-            <Header logout={this.logout} />
-            <Route exact path="/" component={MainPage} />
-
             
-              <Route exact path="/login" component={Login} />
+             <Header logout={this.logout} /> 
+            
+            
+           
+            <Route exact path="/" component={Dashboard} />
+            <Route exact path="/p/:slug" component={Dashboard} />
+            <Route exact path="/current" component={Dashboard} />
+
+
+                        
+            
+            <Route exact path="/login" component={Login} />
             
             <LoggedInRoute exact path="/register" component={Register} />
-
-            <Route exact path="/dashboard" component={Dashboard} />
            
 
       

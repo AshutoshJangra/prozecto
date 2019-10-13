@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as actions from "../../actions";
+import { Link } from "react-router-dom";
 import "../../App.css";
 
 class Login extends Component {
@@ -28,18 +29,18 @@ class Login extends Component {
 
 	loginUser = userData => {
 		this.props.dispatch(actions.login(this.state));
-		console.log(this.state);
+		
 	};
 
 	render() {
 		const { isAuth, errors } = this.props.auth;
 
 		if (isAuth) {
-			return <Redirect to={{ pathname: "/dashboard" }} />;
+			return <Redirect to={{ pathname: "/" }} />;
 		}
 
 		return (
-			<div className=" f2 w-40-l pa4 pt0 pl6-ns  ml7-ns pl5-m ml6-m  sans-serif">
+			<div className=" f2 w-40-l pa4 pt0 pl6-ns  ml7-ns pl5-m ml6-m avenir ">
 				<h3 className="f2-ns f4 mid-gray fw4 ">
 					Login to your Account
 				</h3>
@@ -59,25 +60,18 @@ class Login extends Component {
 					onChange={this.formChange}
 				/>
 
-				<button
-					className="btn-pro w-100 pa2 mt4 f4 fw1 bn near-white br-pill"
+				
+					<button
+					className="btn-pro w-100 pa2 mt4 f4 fw1 bn near-white no-outline bg-black br-pill"
 					onClick={this.loginUser}
 				>
 					Log In
 				</button>
+ 				
+			
 
 				<h2 className="tc pt3 f5 fw2 gray">forget password ?</h2>
-				<hr />
-				<h2 className="tc f5 fw2 mid-gray">Sign in with</h2>
-
-				<div className="flex justify-around">
-					<img src="https://img.icons8.com/color/40/000000/facebook.png" />
-
-					<img src="https://img.icons8.com/color/40/000000/twitter.png" />
-					<img src="https://img.icons8.com/color/40/000000/google.png" />
-					<img src="https://img.icons8.com/color/40/000000/instagram.png" />
-
-				</div>
+				
 			</div>
 		);
 	}

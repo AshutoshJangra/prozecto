@@ -4,52 +4,89 @@ import axiosService from '../services/axios-service';
 
 //Actions funstions
 
-// RENTALS ATIONS ---------------------------
+// PROJECTS ACTIONS ---------------------------
 
 const axiosInstance = axiosService.getInstance();
 
-export const fetchProblemsSuccess = (problems) => {
+export const fetchProjectsSuccess = (projects) => {
   return {
-    type: "FETCH_PROBLEMS_SUCCESS",
-    payload: problems
+    type: "FETCH_PROJECTS_SUCCESS",
+    payload: projects
   };
 };
 
-export const fetchProblems = () => {
+export const fetchProjects = () => {
   return dispatch =>  {
-    axios.get('/api/v1/')
+    axios.get('/api/v1/projects')
     .then(res => res.data)
-    .then(problems => dispatch(fetchProblemsSuccess(problems)) 
+    .then(projects => dispatch(fetchProjectsSuccess(projects)) 
     );
   }
 }
 
-export const fetchRentalByIdInit = () => {
+export const fetchProjectByIdInit = () => {
   return{
-    type:"FETCH_RENTAL_BY_ID_INIT"
+    type:"FETCH_PROJECT_BY_ID_INIT"
   }
 }
 
 
-export const fetchRentalByIdSuccess = (rental) => {
+export const fetchProjectByIdSuccess = (project) => {
   return {
-    type: "FETCH_RENTAL_BY_ID_SUCCESS",
-    payload: rental
+    type: "FETCH_PROJECT_BY_ID_SUCCESS",
+    payload: project
   };
 };
 
-export const fetchRentalById = (rentalId) => {
+export const fetchProjectById = (projectId) => {
     return function(dispatch){
-     dispatch(fetchRentalByIdInit());
+     dispatch(fetchProjectByIdInit());
 
-    axios.get(`/api/v1/rentals/${rentalId}`)
+    axios.get(`/api/v1/projects/${projectId}`)
     .then(res => res.data)
-    .then(rental => dispatch(fetchRentalByIdSuccess(rental))
+    .then(project => dispatch(fetchProjectByIdSuccess(project))
     );     
   };
 };
 
+// Add project to Current and get finished
 
+export const addToCurrent = (project) => {
+  return axiosInstance.patch('/user/add', project)
+              .then(res => console.log("in add actions", res),
+                    err => Promise.reject(err.response.data.errors)
+                    )
+}
+
+//CURRENT PROJECTS 
+
+const getCurrentSuccess = (current) => {
+  return {
+    type: "GET_CURRENT_SUCCESS",
+    payload:current
+  }
+}
+
+const getCurrentFailure = (errors) => {
+  return {
+    type: "GET_CURRENT_FAILURES",
+    errors
+  }
+}
+
+export const getCurrent = () => {
+  return dispatch => {
+    return axiosInstance.get("/user/current").then(
+        res => dispatch(getCurrentSuccess(res.data)),
+        err => Promise.reject(err.response)
+      )
+    .catch(
+       dispatch(({response}) => {
+             dispatch(getCurrentFailure(response));
+       })
+      )
+  }
+}
 // AUTH ATIONS ---------------------------
 
 const loginSuccess = () => {

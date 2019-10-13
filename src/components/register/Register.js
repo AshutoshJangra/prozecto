@@ -60,7 +60,7 @@ class Register extends Component {
 		}
 
 		return (
-			<div className=" f2 pa4 pb4	w-50-l pt0 pl7-ns ml6-ns pl5-m ml6-m  sans-serif">
+			<div className=" f2 pa4 pb4	w-50-l pt0 pl7-ns ml6-ns pl5-m ml6-m  avenir tracked">
 				<h3 className="f2-ns f4 mid-gray fw4 ">Get Started For Free</h3>
 				<label className="f4 fw1 mid-gray">Username</label>
 				<input
@@ -85,24 +85,11 @@ class Register extends Component {
 				/>
 
 				<button
-					className="btn-pro w-100 pa2 mb2 mt4 f4 fw1 bn near-white br-pill"
+					className="bg-blue w-100 pa2 mb2 mt4 f4 fw1 bn near-white br-pill"
 					onClick={this.registerUser}
 				>
 					Start making projects
 				</button>
-
-				<hr />
-
-				<h2 className="tc f5 fw2 mid-gray">or Sign in with</h2>
-
-				<div className="flex justify-around">
-					<img src="https://img.icons8.com/color/40/000000/facebook.png" />
-
-					<img src="https://img.icons8.com/color/40/000000/twitter.png" />
-					<img src="https://img.icons8.com/color/40/000000/google.png" />
-					<img src="https://img.icons8.com/color/40/000000/instagram.png" />
-					
-				</div>
 			</div>
 		);
 	}

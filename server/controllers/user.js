@@ -1,5 +1,7 @@
 const User = require('../models/user');
+const Project = require('../models/project');
 const jwt = require('jsonwebtoken');
+
 
 exports.auth = (req,res)=> {
     const {email , password} = req.body ;
@@ -21,15 +23,13 @@ exports.auth = (req,res)=> {
             const token = jwt.sign({
               userId: user.id,
               username: user.username
-            }, "secret", { expiresIn: '1h'});
+            }, "secret", { expiresIn: '40h'});
       
             return res.json(token);
           } else {
             return res.status(422).send({errors: [{title: 'Wrong Data!', detail: 'Wrong email or password'}]});
           }
-    });     
-
-    
+    });               
 }
 
 exports.register = (req,res) =>{
@@ -62,8 +62,8 @@ exports.register = (req,res) =>{
 }
 
 exports.authMiddleware = function(req, res, next) {
-  const token = req.headers.authorization;
 
+  const token = req.headers.authorization;
   if (token) {
     const user = parseToken(token);
 
@@ -85,9 +85,36 @@ exports.authMiddleware = function(req, res, next) {
 }
 
 function parseToken(token) {
-  return jwt.verify(token.split(' ')[1], config.SECRET);
+  return jwt.verify(token.split(' ')[1], "secret");
 }
 
 function notAuthorized(res) {
   return res.status(401).send({errors: [{title: 'Not authorized!', detail: 'You need to login to get access!'}]});
 }
+
+
+// Get and add current Projects for user
+
+exports.getCurrentProject =async (req, res) => {
+   const user = res.locals.user;
+
+  await Project.findById( user.current , (err , currentProject) => {
+        if(err){
+          return res.json("err in getting current");
+        }
+
+        return res.json(currentProject);
+   });
+}
+
+exports.addToCurrent=  (req , res) => {
+
+  const user = res.locals.user;
+  const project = req.body;
+
+      user.current = project ;
+      user.save()
+
+      return res.json(project);
+  
+};
