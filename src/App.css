@@ -2,7 +2,7 @@
 * {
     line-height: 1.7;
     letter-spacing: 1.6px;
-    font-family: "Montserrat", Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
    
@@ -31,9 +31,60 @@ code .container {
     height: 50px;
 }
 
+.login-btn {
+    background: #fff;
+    color: black;
+    width:99px;
+    height:34px;
+    border:0.5px solid black;
+    border-radius:5px;
+    text-align:center;
+    text-decoration:none;
+    font-size:0.8em;
+    padding-top:5px;
+    margin: 1px 10px;
+}
+
+.logout-btn{
+    background: #fff;
+    color: black;
+    width:99px;
+    height:34px;
+    border:0.5px solid black;
+    border-radius:5px;
+    text-align:center;
+    text-decoration:none;
+    font-size:0.8em;
+    padding-top:0px;
+    margin: 1px 10px;
+}
 .register-btn{
-    background: #07bc4c;
+    background: #000;
     color: white;
+    width:100px;
+    height:35px;
+    border:none;
+    border-radius:4px;
+    text-align:center;
+    text-decoration:none;
+    font-size:0.8em;
+    padding-top:6px;
+    margin: 0 30px 0 10px;
+    font-weight:500;
+}
+
+.learn-more-btn{
+    background: #fff;
+    color: black;
+    width:150px;
+    height:40px;
+    border:0.5px solid black;
+    border-radius:5px;
+    text-align:center;
+    text-decoration:none;
+    font-size:0.8em;
+    padding-top:0px;
+    margin: 30px 10px;
 }
 
 /*main page */
@@ -86,7 +137,7 @@ code .container {
     background: linear-gradient(to bottom right, #68e397, #69faa1);
     background: white;
     color:black;
-    max-width: 200px;
+    max-width: 150px;
 }
 
 
@@ -113,15 +164,42 @@ code .container {
    margin-top: 8vh;
 }
 
+.link{
+        font-size: 0.8em;
+         padding-top:5px;
+    margin: 0 10px;
+    font-weight:500;
+
+}
+
  .link:focus{
     outline: none;
 }
 
  .link:hover{
      color:#000;
+    font-weight:600;
+
 }
 
 /* background color of container before displaying project detail */
 .white-bg{
     background: #f8f8f8 ;
+}
+
+.showcase{
+    text-align:center;
+    margin : 8vh 0 1vh 0;
+}
+
+.showcase .tet{
+     font-family: 'Mansalva', cursive;
+     font-size: 55px;
+     font-weight:100;
+}
+
+.showcase .t{
+     font-family: 'Mansalva', cursive;
+     font-size: 22px;
+     font-weight:100;
 }

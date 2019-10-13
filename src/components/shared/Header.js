@@ -51,10 +51,10 @@ class Header extends Component {
     return (
       <nav className="header flex justify-between">
         <a
-          className="link black  flex items-center "
+          className="no-underline black  flex items-center "
           href="/"
         >
-          <h2 style={{fontFamily: 'Mansalva' , fontSize:'35px' , marginLeft:'6vw'}}>prozecto</h2>
+          <h2 style={{fontFamily: 'Mansalva' , fontSize:'30px' , marginLeft:'5vw' , fontWeight:100}}>prozecto</h2>
         </a>
         <div className="pa2  items-center">
           {this.renderAuthButtons()}

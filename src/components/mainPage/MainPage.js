@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import "../../App.css";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router} from "react-router-dom";
 
 import LeftMenu from "./LeftMenu";
 import RightMenuWOC from "../rightMenu/RightMenuWOC";
+
+import FeaturedProject from './FeaturedProject'
 
 import ProjectDetail from '../dashboard/ProjectDetail';
 
@@ -19,19 +21,15 @@ class MainPage extends Component {
           {/* <div className="bb pb2 b--light-gray  ">
                       <LeftMenu />
                     </div> */}
+
+          <FeaturedProject />
           
           <div className="dashboard flex justify-between">
               <div className="main-area ">
-                <Scroll>
-                  {this.props.children}
-                </Scroll>
-              </div>
-
-              <div className="right-side-menu" />
-                <RightMenuWOC  />
+                       {this.props.children}
               </div>
           </div>    
-              
+        </div>    
       </Router>
     );
   }
