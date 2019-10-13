@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import "../../App.css";
-import image from "../../images/image.jfif";
+import image from "../../images/train.jpg";
 
 import { Link } from "react-router-dom";
 
@@ -29,17 +29,16 @@ class ProblemDisplay extends Component {
         
 		return (
 			<Link className="no-underline" to={`p/${slug}`}>
-				<div className="project-card ba b--light-gray grow mr3 mt4 fw1 white">
+				<div className="project-card  grow mr3 mt4 fw1 white">
 					<div className="image ">
 						<img src={image} alt="img" />
 					</div>
 
 					<div className="card-text pa2">
 						<h2 className="f7 pa1  ">{title}</h2>
-						<h4 className="f7 pa1 fw1">0/7 Completed</h4>
-
+						
 						<h4 className="f7 pa1  fw1">{level}</h4>
-						<h4 className="f7 pa1 fw2">{concept}</h4>
+						
 					</div>
 				</div>
 			</Link>
