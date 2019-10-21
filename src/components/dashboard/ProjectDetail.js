@@ -6,6 +6,7 @@ import "../../App.css";
 
 import Gif from "../../images/gif.png";
 
+import TaskCard from './TaskCard';
 
 class ProjectDetail extends Component {
 
@@ -29,29 +30,34 @@ class ProjectDetail extends Component {
   }
 
   render() {
-    const { author, title, description } = this.props.project;
+    const { author, title,concept, description ,tasks } = this.props.project;
 
     return author ? (
-      <div className="ma2 ml5  ">
-        
-
-        <div className="project-showcase  ">
-          <img src={Gif} />
+      <div className="project-detail ">
+        <div className="current  ">
+          <h2 className= 'tet' >{title}</h2>
+          <h3 className="t">{concept}</h3>
+          <h1 className="fw1 mb0"> 16 : 42 <span className="f7 gray">hr left</span></h1>
+          <button className="learn-more-btn">Live Demo</button>
+          <button onClick={this.AddToCurrent} className="learn-more-btn" style={{background:'#000' , color:'#fff' , border:'none'}}>Add</button>
         </div>
-        <h1 className=" mt4 mb4 pt1 fw6 f4 dark-gray ">{title}</h1>
-        <h3 className="f7 mt3 ml0">
-          To see Live Version
-          <span className="green  pa2 pointer">Click Here</span>
-        </h3>
 
-       
-        <button onClick={this.AddToCurrent} className="tc pointer w-100 bn  mt3">
-          <h2 className="f7 gray pa2 w6 tc bg-green white fw6"> Add</h2>
-        </button>
-        
+        <div className="flex-ns pa3">
+          <div className="ml5">
+            <h1 className="f5  ">Description</h1>
+            <h3 className="detail_description">{description}</h3>
+          </div>
+          <div className="ml4">
+            <h3 className="f5 ml5 mb4">Tasks to do</h3>
 
-        <div className="heading f4 green mt4 fw6 ">Description</div>
-        <h3 className="f6 mt3  fw4 black ">{description}</h3>
+            {
+              // displaying all task cards
+              tasks.map(task => {
+                  return <TaskCard task = {task} /> ;
+              })
+            }
+          </div>
+        </div>
       </div>
     ) : (
     <div className="ml5 mt4">

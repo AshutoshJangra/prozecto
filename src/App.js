@@ -52,9 +52,6 @@ class App extends Component {
             <Route exact path="/p/:slug" component={Dashboard} />
             <Route exact path="/current" component={Dashboard} />
 
-
-                        
-            
             <Route exact path="/login" component={Login} />
             
             <LoggedInRoute exact path="/register" component={Register} />

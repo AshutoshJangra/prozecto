@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import ProblemDisplay from "../dashboard/ProblemDisplay";
 
+import FeaturedProject from '../mainPage/FeaturedProject'
+
 import { connect } from "react-redux";
 import * as actions from "../../actions";
 
@@ -16,8 +18,10 @@ class ProjectListing extends Component {
     return !projects.length ? (
       <h2 className="tc f5 fw1">Loading...</h2>
     ) : (
-      <div className=" bg-white dashboard ml5">
-        
+      <div className="">
+
+        <FeaturedProject />
+        <div className="dashboard ml5">
         <div className="heading flex justify-between">
                 <h2 className="title f5 mt4  dark-gray fw6">Projects</h2>
                 {/*<h3 className="f7 mt0 pt3  dark-green fw5 near-black">show more</h3> */}
@@ -51,7 +55,7 @@ class ProjectListing extends Component {
               <ProblemDisplay  project={project} key={project._id} />
             ))}
         </div>
-        
+        </div>
       </div>
     );
   }

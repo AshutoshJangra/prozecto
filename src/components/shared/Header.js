@@ -54,7 +54,7 @@ class Header extends Component {
           className="no-underline black  flex items-center "
           href="/"
         >
-          <h2 style={{fontFamily: 'Mansalva' , fontSize:'30px' , marginLeft:'5vw' , fontWeight:100}}>prozecto</h2>
+          <h2 style={{fontFamily: 'Montserrat' , fontSize:'25px' , marginLeft:'5vw' , fontWeight:100}}>Prozecto</h2>
         </a>
         <div className="pa2  items-center">
           {this.renderAuthButtons()}

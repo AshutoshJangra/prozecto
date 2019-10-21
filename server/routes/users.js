@@ -13,3 +13,4 @@ router.get('/current', User.authMiddleware, User.getCurrentProject) ;
 router.patch('/add', User.authMiddleware, User.addToCurrent );
  
 module.exports = router ;
+

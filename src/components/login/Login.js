@@ -40,21 +40,21 @@ class Login extends Component {
 		}
 
 		return (
-			<div className=" f2 w-40-l pa4 pt0 pl6-ns  ml7-ns pl5-m ml6-m avenir ">
-				<h3 className="f2-ns f4 mid-gray fw4 ">
+			<div className=" flex flex-column ma6 mt5 w-30-ns" style={{marginLeft:'auto' , marginRight:'auto'}}>
+				<h3 className="tc fw1 ma3 ">
 					Login to your Account
 				</h3>
 
-				<label className="f4 fw1 mid-gray">Email</label>
+				<label className="ma3 ml0">Email</label>
 				<input
-					className="input-area w-100 ba b--light-silver pa2 f5 br-pill "
+					className="h2   "
 					type="email"
 					name="email"
 					onChange={this.formChange}
 				/>
-				<label className="f4 fw1 mid-gray">Password</label>
+				<label className="ma3 ml0">Password</label>
 				<input
-					className="input-area w-100 pa2 f5 ba b--light-silver br-pill "
+					className="h2 "
 					type="password"
 					name="password"
 					onChange={this.formChange}
@@ -62,7 +62,7 @@ class Login extends Component {
 
 				
 					<button
-					className="btn-pro w-100 pa2 mt4 f4 fw1 bn near-white no-outline bg-black br-pill"
+					className="h2 f6 bg-black white bn mt4 mb3 "
 					onClick={this.loginUser}
 				>
 					Log In
@@ -70,7 +70,7 @@ class Login extends Component {
  				
 			
 
-				<h2 className="tc pt3 f5 fw2 gray">forget password ?</h2>
+				<h2 className="tc pt3 f6 fw1 gray">forget password ?</h2>
 				
 			</div>
 		);

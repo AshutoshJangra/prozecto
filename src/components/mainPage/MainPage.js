@@ -5,7 +5,6 @@ import { BrowserRouter as Router} from "react-router-dom";
 import LeftMenu from "./LeftMenu";
 import RightMenuWOC from "../rightMenu/RightMenuWOC";
 
-import FeaturedProject from './FeaturedProject'
 
 import ProjectDetail from '../dashboard/ProjectDetail';
 
@@ -22,9 +21,9 @@ class MainPage extends Component {
                       <LeftMenu />
                     </div> */}
 
-          <FeaturedProject />
           
-          <div className="dashboard flex justify-between">
+          
+          <div className="flex justify-between">
               <div className="main-area ">
                        {this.props.children}
               </div>

@@ -28,7 +28,7 @@ const userSchema = new Schema({
 });
 
 userSchema.methods.hasSamePassword = function(requestedPassword) {
-  return bcrypt.compareSync(requestedPassword, this.password);
+  return bcrypt.compare(requestedPassword, this.password);
 };
 
 userSchema.pre("save", function(next) {

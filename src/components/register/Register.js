@@ -60,32 +60,32 @@ class Register extends Component {
 		}
 
 		return (
-			<div className=" f2 pa4 pb4	w-50-l pt0 pl7-ns ml6-ns pl5-m ml6-m  avenir tracked">
-				<h3 className="f2-ns f4 mid-gray fw4 ">Get Started For Free</h3>
-				<label className="f4 fw1 mid-gray">Username</label>
+			<div className="flex flex-column ma6 mt5 w-30-ns" style={{marginLeft:'auto' , marginRight:'auto'}}>
+				<h3 className=" tc fw1 ma3">Get Started For Free</h3>
+				<label className="ma3 ml0">Username</label>
 				<input
-					className="input-area w-100 ba b--light-silver pa2 f5 br-pill"
+					className="h2"
 					type="text"
 					name="username"
 					onChange={this.formChange}
 				/>
-				<label className="f4 fw1 mid-gray">Email</label>
+				<label className="ma3 ml0">Email</label>
 				<input
-					className="input-area w-100 ba b--light-silver pa2 f5 br-pill "
+					className="h2"
 					type="email"
 					name="email"
 					onChange={this.formChange}
 				/>
-				<label className="f4 fw1 mid-gray">Password</label>
+				<label className="ma3 ml0">Password</label>
 				<input
-					className="input-area w-100 pa2 f5 ba b--light-silver br-pill"
+					className="h2"
 					type="password"
 					name="password"
 					onChange={this.formChange}
 				/>
 
 				<button
-					className="bg-blue w-100 pa2 mb2 mt4 f4 fw1 bn near-white br-pill"
+					className="h2 f6 bg-black white bn mt4 mb3"
 					onClick={this.registerUser}
 				>
 					Start making projects
