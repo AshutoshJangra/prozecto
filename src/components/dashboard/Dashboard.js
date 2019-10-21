@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import ProjectListing from "../projectsListing/ProjectListing";
 import ProjectDetail from "./ProjectDetail";
 import CurrentProject from './CurrentProject'
+import FinishedProject from './FinishedProject'
 
 import MainPage from "../mainPage/MainPage";
 
@@ -19,6 +20,7 @@ class Dashboard extends Component {
               <Route exact path="/" component={ProjectListing}/>
               <Route path="/p/:slug" component={ProjectDetail} />
               <Route path="/current" component={CurrentProject} />
+              <Route path="/finished" component={FinishedProject} />
           </MainPage>
         </div>
       </Router>

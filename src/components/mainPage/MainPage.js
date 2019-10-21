@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import "../../App.css";
 import { BrowserRouter as Router} from "react-router-dom";
 
-import LeftMenu from "./LeftMenu";
-import RightMenuWOC from "../rightMenu/RightMenuWOC";
 
 
 import ProjectDetail from '../dashboard/ProjectDetail';

@@ -17,11 +17,11 @@ class TaskCard extends Component{
 	}
 
 	render(){
-		console.log(this.props) ;
+	
 		const {taskTitle , taskDes , day} = this.props.task;
 
 		return( 
-			<div className={day%2==0 ? "taskcard-d " : "taskcard br3  "}  >
+			<div className={day%2==0 ? "taskcard-d w-90-m" : "taskcard br3 w-90-m "} style={{marginLeft:'auto' , marginRight:'auto'}} >
 				<div className='flex justify-between'>
 					<div className='f6 '>{taskTitle}</div>
 					<div>

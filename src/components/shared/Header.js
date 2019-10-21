@@ -16,10 +16,11 @@ class Header extends Component {
     if (isAuth) {
       return (
          <React.Fragment>
-             <div className=" flex mt1 justify-between">
+             <div className=" flex mt1  justify-between">
                       <Link className="  link " to="/">Home</Link>
                       <Link className="  link" to="/current">Current</Link>
-                      <Link className="  link" to="/">Finished</Link>
+                      <Link className="  link" to="/finished">Finished</Link>
+                      <Link className="  link" to="/">Contribute</Link>
                       <Link className="  link" to="/">Blogs</Link>
                       {/* <Link className=" no-underline  dark-gray f6 fw6 pa1 pr4 link" to="/">My Profile</Link> */}
                       <img src={profileIcon}  alt="profile" className="h2 mr3"/>
@@ -54,7 +55,7 @@ class Header extends Component {
           className="no-underline black  flex items-center "
           href="/"
         >
-          <h2 style={{fontFamily: 'Montserrat' , fontSize:'25px' , marginLeft:'5vw' , fontWeight:100}}>Prozecto</h2>
+          <h2 style={{fontFamily: 'Montserrat' , fontSize:'25px' , marginLeft:'5vw' , fontWeight:100 , color:'white'}}>Prozecto</h2>
         </a>
         <div className="pa2  items-center">
           {this.renderAuthButtons()}

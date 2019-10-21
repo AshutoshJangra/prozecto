@@ -37,36 +37,31 @@ class ProjectDetail extends Component {
         <div className="current  ">
           <h2 className= 'tet' >{title}</h2>
           <h3 className="t">{concept}</h3>
-          <h1 className="fw1 mb0"> 16 : 42 <span className="f7 gray">hr left</span></h1>
           <button className="learn-more-btn">Live Demo</button>
           <button onClick={this.AddToCurrent} className="learn-more-btn" style={{background:'#000' , color:'#fff' , border:'none'}}>Add</button>
         </div>
 
-        <div className="flex-ns pa3">
-          <div className="ml5">
-            <h1 className="f5  ">Description</h1>
-            <h3 className="detail_description">{description}</h3>
+        <div className=" ">
+          <div className="tc">
+            <h1 className="f5  ma4  ">Description</h1>
+            <h3 className="f6 fw1 mt2 w-50" style={{marginLeft:'auto' , marginRight:'auto'}}>{description}</h3>
           </div>
-          <div className="ml4">
-            <h3 className="f5 ml5 mb4">Tasks to do</h3>
-
-            {
-              // displaying all task cards
-              tasks.map(task => {
-                  return <TaskCard task = {task} /> ;
-              })
-            }
+          <div className="">
+            <h3 className="tc f5 ma4">Tasks to do</h3>
+            
+              {
+                // displaying all task cards
+                tasks.map(task => {
+                    return <TaskCard task = {task}  /> ;
+                })
+              }
+            
           </div>
         </div>
       </div>
     ) : (
-    <div className="ml5 mt4">
-      <div className="w5 h2 mt2 white-bg"/>
-      <div className="w6 h5 mt4 white-bg"/>
-      <div className="w5 h1 mt3 white-bg"/>
-      <div className="w6 h3 mt3 white-bg"/>
-      <div className="w4 h2 mt4 white-bg"/>
-      <div className="w6 h4 mt4 white-bg"/>
+    <div className=" tc ">
+        loading...
     </div>
       
     );

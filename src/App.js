@@ -51,6 +51,7 @@ class App extends Component {
             <Route exact path="/" component={Dashboard} />
             <Route exact path="/p/:slug" component={Dashboard} />
             <Route exact path="/current" component={Dashboard} />
+            <Route exact path="/finished" component={Dashboard} />
 
             <Route exact path="/login" component={Login} />
             

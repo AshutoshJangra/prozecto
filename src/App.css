@@ -27,16 +27,17 @@ code .container {
 }
 
 .header {
-    background-color: #fff ;
+    background-color: #4f475e ;
+    color:white;
     height: 50px;
 }
 
 .login-btn {
-    background: #fff;
-    color: black;
+    background: #4f475e;
+    color: white;
     width:99px;
     height:34px;
-    border:0.5px solid black;
+    border:0.5px solid white;
     border-radius:5px;
     text-align:center;
     text-decoration:none;
@@ -46,11 +47,11 @@ code .container {
 }
 
 .logout-btn{
-    background: #fff;
-    color: black;
+    background: #4f475e;
+    color: white;
     width:99px;
     height:34px;
-    border:0.5px solid black;
+    border:0.5px solid white;
     border-radius:5px;
     text-align:center;
     text-decoration:none;
@@ -59,11 +60,11 @@ code .container {
     margin: 1px 10px;
 }
 .register-btn{
-    background: #000;
+    background: #433c50;
     color: white;
     width:100px;
     height:35px;
-    border:none;
+    border:0.5px solid white;
     border-radius:4px;
     text-align:center;
     text-decoration:none;
@@ -74,11 +75,11 @@ code .container {
 }
 
 .learn-more-btn{
-    background: #fff;
-    color: black;
+    background: #4f475e;
+    color: white;
     width:150px;
     height:40px;
-    border:0.5px solid black;
+    border:0.5px solid white;
     border-radius:5px;
     text-align:center;
     text-decoration:none;
@@ -164,7 +165,7 @@ code .container {
          padding-top:5px;
     margin: 0 10px;
     font-weight:500;
-    color: #000;
+    color: white;
 
 }
 
@@ -186,7 +187,8 @@ code .container {
     text-align:center;
     padding: 4vh 0 ;
     width: 98vw;
-    background: #fdfdfd;
+    background: #433c50;
+    color:white;
 }
 
 .showcase .tet{
@@ -205,7 +207,8 @@ code .container {
     text-align:center;
     padding: 4vh 0 ;
     width: 98vw;
-    background: #fdfdfd ;
+    background: #433c50 ;
+    color:white;
 }
 
 .current .tet{
@@ -219,30 +222,8 @@ code .container {
 }
 
 /* Project Detail */
-.project-detail .detail_description{
-    font-size: .8em;
-    font-weight: 100;
-    line-height: 25px;
-    letter-spacing: 1.5px;
-    max-width: 25vw;
-    margin: 2vh 0;
-    margin-left: auto;
-    margin-right: auto;
-    color:#111;
+/*.project-detail .detail_description{
 
-}
-.project-detail .detail_descriptio{
-    font-size: .9em;
-    font-weight: 100;
-    line-height: 30px;
-    letter-spacing: 2px;
-    max-width : 50vw;
-    margin: 4vh 0;
-    margin-left: auto;
-    margin-right: auto;
-    color:#111;
-
-}
 
 /*project detail task card*/
 .taskcard{
