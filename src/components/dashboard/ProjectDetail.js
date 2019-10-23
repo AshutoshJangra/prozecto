@@ -4,8 +4,6 @@ import { connect } from "react-redux";
 import * as actions from "../../actions";
 import "../../App.css";
 
-import Gif from "../../images/gif.png";
-
 import TaskCard from './TaskCard';
 
 class ProjectDetail extends Component {
@@ -37,8 +35,8 @@ class ProjectDetail extends Component {
         <div className="current  ">
           <h2 className= 'tet' >{title}</h2>
           <h3 className="t">{concept}</h3>
-          <button className="learn-more-btn">Live Demo</button>
-          <button onClick={this.AddToCurrent} className="learn-more-btn" style={{background:'#000' , color:'#fff' , border:'none'}}>Add</button>
+          <button className="learn-more-btn grow">Live Demo</button>
+          <button onClick={this.AddToCurrent} className="learn-more-btn grow" style={{background:'#000' , color:'#fff' , border:'none'}}>Add</button>
         </div>
 
         <div className=" ">

@@ -6,6 +6,8 @@ import FeaturedProject from '../mainPage/FeaturedProject'
 import { connect } from "react-redux";
 import * as actions from "../../actions";
 
+import photo from '../../images/berl.jpg';
+
 class ProjectListing extends Component {
  componentWillMount() {
     this.props.dispatch(actions.fetchProjects());
@@ -19,8 +21,11 @@ class ProjectListing extends Component {
       <h2 className="tc f5 fw1">Loading...</h2>
     ) : (
       <div className="">
-
-        <FeaturedProject />
+        <div className="flex">
+            <FeaturedProject />
+            
+        </div>
+        
         <div className="dashboard ml5">
         <div className="heading flex justify-between">
                 <h2 className="title f5 mt4  dark-gray fw6">Projects</h2>

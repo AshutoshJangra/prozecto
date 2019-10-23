@@ -30,8 +30,8 @@ class ProblemDisplay extends Component {
 		return (
 			<Link className="no-underline" to={`p/${slug}`}>
 				<div className="project-card  grow mr3 mt4 fw1 white">
-					<div className="image ">
-						<img src={image} alt="img" />
+					<div className="image  ">
+						<img src={image} alt="img"  />
 					</div>
 
 					<div className="card-text pa2">

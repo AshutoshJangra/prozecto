@@ -25,14 +25,14 @@ class CurrentProject extends Component {
 		        <div className="current  ">
 		          <h2 className= 'tet' >{title}</h2>
 		          <h3 className="t">{concept}</h3>
-		          <h1 className="fw1 mb0"> 16 : 42 <span className="f7 near-white">hr left</span></h1>
+		          <h1 className="fw1 mb0"> 16 : 42 <span className="f7 dark-gray">hr left</span></h1>
 
-		          <button className="learn-more-btn">Live Demo</button>
-		          <button className="learn-more-btn">Pending</button>
+		          <button className="learn-more-btn grow shadow-5">Live Demo</button>
+		          <button className="learn-more-btn grow shadow-5">Pending</button>
 		        </div>
 
 		        <div className=" ">
-		          <div className="tc">
+		          <div className="tc ">
 		            <h1 className="f5  ma4  ">Description</h1>
 		            <h3 className="f6 fw1 mt2 w-50" style={{marginLeft:'auto' , marginRight:'auto'}}>{description}</h3>
 		          </div>
