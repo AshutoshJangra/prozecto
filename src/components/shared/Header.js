@@ -16,7 +16,7 @@ class Header extends Component {
     if (isAuth) {
       return (
          <React.Fragment>
-             <div className=" flex mt1  justify-between">
+             <div className=" flex mt1 mr2  justify-between">
                       <Link className="  link " to="/">Home</Link>
                       <Link className="  link" to="/current">Current</Link>
                       <Link className="  link" to="/finished">Finished</Link>
@@ -26,7 +26,7 @@ class Header extends Component {
                       <img src={profileIcon}  alt="profile" className="h2 mr3"/>
                       
                       <button
-                              className="logout-btn ba br4 w4 h2 bg-white mr2 f7 "
+                              className="logout-btn grow shadow-5 ba br4 w4 h2 bg-white mr2 f7 "
                               onClick={this.handleLogout}>
                                           Logout
                       </button> 
@@ -40,8 +40,8 @@ class Header extends Component {
                   <Link className=" link" to="/">Blogs</Link>
                   {/* <Link className=" no-underline  dark-gray f6 fw6 pa1 pr4 link" to="/">My Profile</Link> */}
                   
-                  <Link className="login-btn " to="/login">Log In</Link>
-                  <Link className="register-btn " to="/register">Sign Up</Link>
+                  <Link className="login-btn grow" to="/login">Log In</Link>
+                  <Link className="register-btn grow" to="/register">Sign Up</Link>
               </div> 
          </React.Fragment>
         );
@@ -55,7 +55,7 @@ class Header extends Component {
           className="no-underline black  flex items-center "
           href="/"
         >
-          <h2 style={{fontFamily: 'Montserrat' , fontSize:'25px' , marginLeft:'5vw' , fontWeight:100 , color:'white'}}>Prozecto</h2>
+          <h2 style={{fontFamily: 'Montserrat' , fontSize:'23px' , marginLeft:'5vw' , fontWeight:100 , color:'black'}}>Prozecto</h2>
         </a>
         <div className="pa2  items-center">
           {this.renderAuthButtons()}

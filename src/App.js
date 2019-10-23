@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import MainPage from "./components/mainPage/MainPage";
+
 import Header from "./components/shared/Header";
+import Footer from "./components/shared/Footer";
+
 import ProblemListing from "./components/projectsListing/ProjectListing";
 import "./App.css";
 
@@ -57,7 +60,6 @@ class App extends Component {
             
             <LoggedInRoute exact path="/register" component={Register} />
            
-
       
           </div>
         </Router>

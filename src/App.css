@@ -5,6 +5,7 @@
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+
    
 }
 .dark-theme {
@@ -27,17 +28,18 @@ code .container {
 }
 
 .header {
-    background-color: #4f475e ;
-    color:white;
+    background-showcacolor: #1e2730 ;
+    /*background: #fff;*/
+    color:whiteshowca;
     height: 50px;
 }
 
 .login-btn {
-    background: #4f475e;
-    color: white;
+    background: #fff;
+    color: black;
     width:99px;
     height:34px;
-    border:0.5px solid white;
+    border:0.5px solid black;
     border-radius:5px;
     text-align:center;
     text-decoration:none;
@@ -47,11 +49,11 @@ code .container {
 }
 
 .logout-btn{
-    background: #4f475e;
-    color: white;
+    background: #fff;
+    color: black;
     width:99px;
     height:34px;
-    border:0.5px solid white;
+    border:0.5px solid black;
     border-radius:5px;
     text-align:center;
     text-decoration:none;
@@ -60,11 +62,11 @@ code .container {
     margin: 1px 10px;
 }
 .register-btn{
-    background: #433c50;
+    background: #000;
     color: white;
     width:100px;
     height:35px;
-    border:0.5px solid white;
+    border:none;
     border-radius:4px;
     text-align:center;
     text-decoration:none;
@@ -75,11 +77,11 @@ code .container {
 }
 
 .learn-more-btn{
-    background: #4f475e;
-    color: white;
+    background: #fff;
+    color: black;
     width:150px;
     height:40px;
-    border:0.5px solid white;
+    border:0.5px solid black;
     border-radius:5px;
     text-align:center;
     text-decoration:none;
@@ -87,14 +89,14 @@ code .container {
     padding-top:0px;
     margin: 30px 10px;
 }
+.learn-more-btn:hover{
+    background: #000;
+    color: white;
+}
 
 /*main page */
 
-.side-menu{
-    
-    width: 300px;
-    background: #fff;
-}
+
 
 .logo{
     color: #08c65b;
@@ -102,9 +104,7 @@ code .container {
 }
 
 .footer{
-    position: absolute;
-    bottom: 0;
-    margin-left: 4.5vw; 
+    
 }
 
 
@@ -133,7 +133,7 @@ code .container {
     background: linear-gradient(to bottom right, #68e397, #69faa1);
     background: white;
     color:black;
-    max-width: 150px;
+    max-width:200px;
 }
 
 
@@ -165,7 +165,7 @@ code .container {
          padding-top:5px;
     margin: 0 10px;
     font-weight:500;
-    color: white;
+    color: black;
 
 }
 
@@ -185,10 +185,11 @@ code .container {
 
 .showcase{
     text-align:center;
-    padding: 4vh 0 ;
+    padding: 5vh 0 ;
     width: 98vw;
-    background: #433c50;
-    color:white;
+    background: #000;
+    background:url('./images/dot-grid.png');
+    color:black;
 }
 
 .showcase .tet{
@@ -206,9 +207,11 @@ code .container {
 .current{
     text-align:center;
     padding: 4vh 0 ;
-    width: 98vw;
-    background: #433c50 ;
-    color:white;
+    width: 98vw;    
+    background: #fff ;
+    background:url('./images/dot-grid.png');
+
+    color:black;
 }
 
 .current .tet{
