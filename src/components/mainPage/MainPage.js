@@ -14,19 +14,13 @@ class MainPage extends Component {
     return (
       <Router >
         <div className="mainPage mt0 ">
-          {/*side menu left */}
-          {/* <div className="bb pb2 b--light-gray  ">
-                      <LeftMenu />
-                    </div> */}
 
-          
-          
-          <div className="flex justify-between">
+          <div className="">
               <div className="main-area ">
                        {this.props.children}
               </div>
-          </div>    
-        </div>    
+          </div>
+        </div>
       </Router>
     );
   }

@@ -10,6 +10,7 @@ import "./App.css";
 import Dashboard from "./components/dashboard/Dashboard";
 import ProjectDetail from "./components/dashboard/ProjectDetail";
 
+// import Modal from "./components/modal/Modal";  
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 
@@ -48,8 +49,18 @@ class App extends Component {
           <div className="App ">
             
              <Header logout={this.logout} /> 
+            {/*<div className="nav bb b--light-gray  pa2 ph3 ">
+                <ul className="flex ml5" style={{listStyle:'none'}}>
+                    <li className="f7 pointer ph3 pl0">HTML</li>
+                    <li className="f7 pointer ph3">CSS</li>
+                    <li className="f7 pointer ph3">JavaScript</li>
+                    <li className="f7 pointer ph3">React JS</li>
+                    <li className="f7 pointer">Node JS</li>
+                </ul>
+                
+            </div>*/}
             
-            
+           
            
             <Route exact path="/" component={Dashboard} />
             <Route exact path="/p/:slug" component={Dashboard} />
@@ -60,6 +71,7 @@ class App extends Component {
             
             <LoggedInRoute exact path="/register" component={Register} />
            
+           <Footer />
       
           </div>
         </Router>

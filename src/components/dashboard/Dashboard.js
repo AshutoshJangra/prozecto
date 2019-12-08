@@ -15,7 +15,7 @@ class Dashboard extends Component {
     return (
 
       <Router>
-        <div className=" w7">
+        <div className="" style={{background:'#f9f9f9'}}>
           <MainPage>
               <Route exact path="/" component={ProjectListing}/>
               <Route path="/p/:slug" component={ProjectDetail} />

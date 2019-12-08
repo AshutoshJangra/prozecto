@@ -1,75 +1,28 @@
-import React, { Component } from "react";
-import ProblemDisplay from "../dashboard/ProblemDisplay";
+import React, {Component} from 'react';
+import '../../App.css';
 
-import FeaturedProject from '../mainPage/FeaturedProject'
-
-import { connect } from "react-redux";
-import * as actions from "../../actions";
-
-import photo from '../../images/berl.jpg';
+import ProjectList from './ProjectList';
+import Categories from './Categories';
+import MainRM from '../rightMenu/MainRM';
 
 class ProjectListing extends Component {
- componentWillMount() {
-    this.props.dispatch(actions.fetchProjects());
-  }
+	render(){
 
-  render() {
-
-    const {projects} = this.props;
-
-    return !projects.length ? (
-      <h2 className="tc f5 fw1">Loading...</h2>
-    ) : (
-      <div className="">
-        <div className="flex">
-            <FeaturedProject />
-            
-        </div>
-        
-        <div className="dashboard ml5">
-        <div className="heading flex justify-between">
-                <h2 className="title f5 mt4  dark-gray fw6">Projects</h2>
-                {/*<h3 className="f7 mt0 pt3  dark-green fw5 near-black">show more</h3> */}
-        </div>
-
-        <div className="project_list flex ">
-            {projects.map(project => (
-              <ProblemDisplay  project={project} key={project._id} />
-            ))}
-        </div>
-
-  
-        <div className="heading flex justify-between">
-            <h2 className="title f5 mt4  dark-gray fw6">Modern JavaScript</h2>
-            {/* <h3 className="f7 mt4 pt1 dark-green fw5 near-black">show more</h3> */}
-        </div>
-
-       <div className="project_lis flex ">
-            {projects.map(project => (
-              <ProblemDisplay  project={project} key={project._id} />
-            ))}
-        </div>
-        
-            <div className="heading flex justify-between">
-            <h2 className="title f5 mt4  dark-gray fw6">Html / Css</h2>
-            {/* <h3 className="f7 mt4 pt1 dark-green fw5 near-black">show more</h3> */}
-        </div>
-
-       <div className="project_lis flex ">
-            {projects.map(project => (
-              <ProblemDisplay  project={project} key={project._id} />
-            ))}
-        </div>
-        </div>
-      </div>
-    );
-  }
+		return(
+        		<div className="flex justify-center">
+        			<div className="dn dib-l">
+        				<Categories />
+        			</div>
+							<div>
+        				<ProjectList />
+							</div>
+        			<div className="dn dib-ns">
+        				<MainRM />
+							</div>
+        		</div>
+		);
+	}
 }
 
-const mapStateToProps = state => {
-  return {
-    projects: state.projectReducer.data
-  };
-};
 
-export default connect(mapStateToProps)(ProjectListing);
+export default ProjectListing;

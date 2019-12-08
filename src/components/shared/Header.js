@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
-import profileIcon from '../../images/profile-icon.png';
+import profileIcon from "../../images/profileIcon.svg";
+import logoutIcon from "../../images/logoutIcon.png";
+
 import "../../App.css";
 
 class Header extends Component {
@@ -16,20 +18,20 @@ class Header extends Component {
     if (isAuth) {
       return (
          <React.Fragment>
-             <div className=" flex mt1 mr2  justify-between">
-                      <Link className="  link " to="/">Home</Link>
-                      <Link className="  link" to="/current">Current</Link>
+             <div className=" flex mt2 mr4  justify-between">
+                     {/*} <Link className="  link" to="/current">Current</Link>
                       <Link className="  link" to="/finished">Finished</Link>
                       <Link className="  link" to="/">Contribute</Link>
                       <Link className="  link" to="/">Blogs</Link>
-                      {/* <Link className=" no-underline  dark-gray f6 fw6 pa1 pr4 link" to="/">My Profile</Link> */}
-                      <img src={profileIcon}  alt="profile" className="h2 mr3"/>
-                      
+                       <Link className=" no-underline  dark-gray f6 fw6 pa1 pr4 link" to="/">My Profile</Link> */}
+                      <img src={profileIcon}  alt="profile" className=" mr4" style={{height:'30px'}} />
+
                       <button
-                              className="logout-btn grow shadow-5 ba br4 w4 h2 bg-white mr2 f7 "
+                              className=" bn ml3 bg-white mr2  "
                               onClick={this.handleLogout}>
-                                          Logout
-                      </button> 
+                                      <img src={logoutIcon}  alt="logout" className="mt1 mr4" style={{height:'25px'}}/>
+
+                      </button>
               </div>
           </React.Fragment>
       );
@@ -39,10 +41,10 @@ class Header extends Component {
               <div className=" flex  justify-between mr2">
                   <Link className=" link" to="/">Blogs</Link>
                   {/* <Link className=" no-underline  dark-gray f6 fw6 pa1 pr4 link" to="/">My Profile</Link> */}
-                  
+
                   <Link className="login-btn grow" to="/login">Log In</Link>
                   <Link className="register-btn grow" to="/register">Sign Up</Link>
-              </div> 
+              </div>
          </React.Fragment>
         );
     }
@@ -50,12 +52,12 @@ class Header extends Component {
 
   render() {
     return (
-      <nav className="header flex justify-between">
+      <nav className="header sticky flex justify-between">
         <a
-          className="no-underline black  flex items-center "
+          className=" no-underline   flex items-center "
           href="/"
         >
-          <h2 style={{fontFamily: 'Montserrat' , fontSize:'23px' , marginLeft:'5vw' , fontWeight:100 , color:'black'}}>Prozecto</h2>
+          <h2 className=" code navy" style={{ fontSize:'24px' , marginLeft:'5vw'  ,  letterSpacing:'0px'}}>Prozecto</h2>
         </a>
         <div className="pa2  items-center">
           {this.renderAuthButtons()}

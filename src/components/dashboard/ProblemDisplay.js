@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import "../../App.css";
-import image from "../../images/train.jpg";
+// import image from "../../images/train.jpg";
+
 
 import { Link } from "react-router-dom";
 
@@ -24,21 +25,24 @@ const limitProjectTitle = (title, limit = 15) => {
 
 class ProblemDisplay extends Component {
 	render() {
-		let { title, description, slug ,level , concept} = this.props.project;
+		let { title, description,image, slug ,level , concept} = this.props.project;
 		title = limitProjectTitle(title);
-        
+
+
 		return (
 			<Link className="no-underline" to={`p/${slug}`}>
-				<div className="project-card  grow mr3 mt4 fw1 white">
-					<div className="image  ">
-						<img src={image} alt="img"  />
-					</div>
+				<div className="border-light card mv3 flex  bg-white">
 
-					<div className="card-text pa2">
-						<h2 className="f7 pa1  ">{title}</h2>
-						
-						<h4 className="f7 pa1  fw1">{level}</h4>
-						
+						<img src={image} alt="img" style={{width:'13vw' , height:'18vh'}} />
+
+
+					<div className=" pa3 ml3 ">
+						<h2 className=" b  navy" style={{fontSize:'1.1em'}}>{title}</h2>
+
+						<div className="flex ">
+							<h4 className="f6 fw5 near-black mt2">{level}</h4>
+							<h4 className="f6 fw5 near-black mt2 ml3">{concept}</h4>
+						</div>
 					</div>
 				</div>
 			</Link>
