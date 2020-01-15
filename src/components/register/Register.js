@@ -46,7 +46,7 @@ class Register extends Component {
 		const { errors, redirect } = this.state;
 
 		{
-			
+
 			if (redirect) {
 				return (
 					<Redirect
@@ -60,7 +60,7 @@ class Register extends Component {
 		}
 
 		return (
-			<div className="flex flex-column ma6 mt5 w-30-ns" style={{marginLeft:'auto' , marginRight:'auto'}}>
+			<div className="flex flex-column mh6 pv5  w-30-ns" style={{marginLeft:'auto' , marginRight:'auto'}}>
 				<h3 className=" tc fw1 ma3">Get Started For Free</h3>
 				<label className="ma3 ml0">Username</label>
 				<input

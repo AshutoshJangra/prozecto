@@ -29,8 +29,12 @@ class Login extends Component {
 
 	loginUser = userData => {
 		this.props.dispatch(actions.login(this.state));
-		
+
 	};
+
+	changeModalState = () => {
+			this.props.dispatch(actions.changeState()) ;
+	}
 
 	render() {
 		const { isAuth, errors } = this.props.auth;
@@ -40,7 +44,7 @@ class Login extends Component {
 		}
 
 		return (
-			<div className=" flex flex-column ma6 mt5 w-30-ns" style={{marginLeft:'auto' , marginRight:'auto'}}>
+			<div className=" flex flex-column mh6 mt0 pv5 w-30-ns " style={{marginLeft:'auto' , marginRight:'auto'}}>
 				<h3 className="tc fw1 ma3 ">
 					Login to your Account
 				</h3>
@@ -60,18 +64,19 @@ class Login extends Component {
 					onChange={this.formChange}
 				/>
 
-				
+
 					<button
 					className="h2 f6 bg-black white bn mt4 mb3 "
 					onClick={this.loginUser}
 				>
 					Log In
 				</button>
- 				
-			
+
+
 
 				<h2 className="tc pt3 f6 fw1 gray">forget password ?</h2>
-				
+				<button onclick={this.changeModalState}> close </button>
+
 			</div>
 		);
 	}

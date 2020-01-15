@@ -33,16 +33,17 @@ class ProblemDisplay extends Component {
 			<Link className="no-underline" to={`p/${slug}`}>
 				<div className="border-light card mv3 flex  bg-white">
 
-						<img src={image} alt="img" style={{width:'13vw' , height:'18vh'}} />
+						<img src={image} alt="img" style={{width:'13vw' , height:'18.4vh'}} />
 
 
 					<div className=" pa3 ml3 ">
 						<h2 className=" b  navy" style={{fontSize:'1.1em'}}>{title}</h2>
 
 						<div className="flex ">
-							<h4 className="f6 fw5 near-black mt2">{level}</h4>
-							<h4 className="f6 fw5 near-black mt2 ml3">{concept}</h4>
+							<h4 className=" mid-gray mt2 "  style={{fontSize:'0.85em'}}>{level}</h4>
+							<h4 className=" mid-gray mt2 ml3 "  style={{fontSize:'0.85em'}}>{concept}</h4>
 						</div>
+						<h4 className="f7 purple mt2 ">200 points</h4>
 					</div>
 				</div>
 			</Link>

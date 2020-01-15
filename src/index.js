@@ -6,7 +6,7 @@ import Modal from './components/modal/Modal'
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(<App />, document.getElementById("root"));
-// ReactDOM.render(<Modal />, document.getElementById("root"));
+ReactDOM.render(<Modal />, document.getElementById("modal-root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

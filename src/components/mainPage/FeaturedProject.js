@@ -8,8 +8,8 @@ const FeaturedProject = () => {
 		<div className=" " >
 
 
-			<div className="main-showcase   pointer ">
-				<img src={photo} className="card" alt="showcase-photo" style={{width:'45vw' , height:'57vh' }} />
+			<div className="main-showcase  pointer ">
+				<img src={photo} className="card cover" alt="showcase-photo" style={{width:'45vw' , height:'57vh' }} />
 
 			</div>
 

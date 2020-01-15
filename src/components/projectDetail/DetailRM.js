@@ -14,22 +14,20 @@ class DetailRM extends Component {
 
 	render(){
     const { author, title,level,concept } = this.props.project;
- console.log(title);
-		return(
-			<div className="right-area" >
-      			<div className="add-pro-box card">
-                <h2 className= 'tet f4 mv2 dark-gray' >{title}</h2>
 
-                <div className="flex mv2 pv2 ">
-                  <h3 className="f6  mid-gray mh2 ml0 pl0">{concept}</h3>
+		return(
+		    <div className="add-pro-box card">
+                <h2 className= 'tet f3 mv2 dark-gray' >{title}</h2>
+
+                <div className="flex justify-between mv2 pv2 ">
+                  <h3 className="f6  mid-gray mr3">{concept}</h3>
                   <h3 className="f6  mid-gray mh2">{level}</h3>
                 </div>
                 <button className="learn-more-btn  card">Live Demo</button>
                 <button onClick={this.AddToCurrent} className="learn-more-btn card " style={{background:'#1e2730',  color:'#fff' , border:'none'}}>Add</button>
 
                 <p className="f7 mv2  mh0  near-black">Click on "Add" to add this project to your current and start making it</p>
-      			</div>
-			</div>
+      	</div>
 		);
 	}
 }

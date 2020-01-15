@@ -4,11 +4,11 @@ const Footer = () => {
 	return(
 		<div className="footer  tc">
 				 <ul className="flex justify-center footer-links pa4 " style={{listStyle:'none'}}>
-                    <li className="f7 dark-gray fw6 pointer mh3 pl0">About</li>
-                    <li className="f7 dark-gray fw6  pointer mh3">Contribute</li>
-                    <li className="f7 dark-gray fw6  pointer mh3">Recommend a project</li>
-                    <li className="f7 dark-gray fw6  pointer mh3">Contact Us</li>
-                    <li className="f7 dark-gray fw6  pointer">Privacy Policy</li>
+                    <li className="f6 black fw5 pointer mh3 pl0">About</li>
+                    <li className="f6 black fw5  pointer mh3">Contribute</li>
+                    <li className="f6 black fw5  pointer mh3">Recommend a project</li>
+                    <li className="f6 black fw5  pointer mh3">Contact Us</li>
+                    <li className="f6 black fw5  pointer">Privacy Policy</li>
                 </ul>
                 <div class="">
                  	<a class="link dim gray dib h2 w2 br-100 mr3 " href="#" title="">
@@ -35,7 +35,7 @@ const Footer = () => {
       						<path d="M16 0 A16 16 0 0 0 0 16 A16 16 0 0 0 16 32 A16 16 0 0 0 32 16 A16 16 0 0 0 16 0 M5 11.5 A12 12 0 0 1 11 5 A46 46 0 0 1 13.5 9.25 A46 46 0 0 1 5 11.5 M15 4 A12 12 0 0 1 21.5 5.25 A46 46 0 0 1 17 7.75 A50 50 0 0 0 15 4 M4 16 A50 50 0 0 0 15 13 A46 46 0 0 1 16 15.5 A26 26 0 0 0 6 22.5 A12 12 0 0 1 4 16 M18.5 11.5 A50 50 0 0 0 25 8 A12 12 0 0 1 28 13.75 A26 26 0 0 0 19.75 14.5 A50 50 0 0 0 18.5 11.5 M17 19.5 A46 46 0 0 1 18 28 A12 12 0 0 1 8.75 25.5 A22 22 0 0 1 17 19.5 M20.75 18.25 A22 22 0 0 1 28 17.75 A12 12 0 0 1 22 26.5 A50 50 0 0 0 20.75 18.25"></path>
     					</svg>
   					</a>
-   				 <p class="f7 dark-gray fw6  mt3 tc">
+   				 <p class="f6 black fw5 mt3 tc">
      				 Copyright &copy; Prozecto 2019
     				</p>
 			</div>

@@ -19,7 +19,7 @@ export const fetchProjects = () => {
   return dispatch =>  {
     axios.get('/api/v1/projects')
     .then(res => res.data)
-    .then(projects => dispatch(fetchProjectsSuccess(projects)) 
+    .then(projects => dispatch(fetchProjectsSuccess(projects))
     );
   }
 }
@@ -45,10 +45,16 @@ export const fetchProjectById = (projectId) => {
     axios.get(`/api/v1/projects/${projectId}`)
     .then(res => res.data)
     .then(project => dispatch(fetchProjectByIdSuccess(project))
-    );     
+    );
   };
 };
 
+// Change state of modal true or false
+export const changeState = () => {
+  return {
+    type:"CHANGE_STATE"
+  }
+}
 // Add project to Current and get finished
 
 export const addToCurrent = (project) => {
@@ -58,7 +64,7 @@ export const addToCurrent = (project) => {
                     )
 }
 
-//CURRENT PROJECTS 
+//CURRENT PROJECTS
 
 const getCurrentSuccess = (current) => {
   return {

@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import * as actions from "../../actions";
 import { connect } from "react-redux";
 
-import TaskCard from './TaskCard';
+
+import CurrentDesc from './CurrentDesc';
+import TimeCard from './TimeCard';
+import CurrentRM from './CurrentRM';
 
 import photo3 from '../../images/train1.jpg' ;
 
@@ -19,13 +22,15 @@ class CurrentProject extends Component {
 			tasks,
 			concept,
 			level,
-			author
+			author,
 		} = this.props.current.current;
-		
+
+ const {current} = this.props.current;
+console.log(tasks);
+
 		return title?(
-			<div className="project-detail ">
-				<div className="flex">
-					<img src={photo3} alt="showcase-photo" style={{width:'50vw' , height:'60vh' , marginLeft:'5vw' , padding:'4vh',paddingTop:'6vh'}} />
+			<div className="flex justify-center ">
+				{/*<div className="flex">
 
 			        <div className="current ">
 			          <h2 className= 'tet  mb3 dark-gray' >{title}</h2>
@@ -36,27 +41,21 @@ class CurrentProject extends Component {
 			          <button className="learn-more-btn shadow-5">Pending</button>
 			          <p className="mv f7 mid-gray"></p>
 			        </div>
-				</div>
-			
-		        <div className=" ">
-		          <div className="tc ">
-		            <h1 className="f5  ma5  ">Description</h1>
-		            <h3 className="f6 fw1 mt2 w-50" style={{marginLeft:'auto' , marginRight:'auto'}}>{description}</h3>
-		        </div>
-		   <div className="">
-            <h3 className="tc f5 ma5">Tasks to do</h3>
-            
-              {
-                // displaying all task cards
-                tasks.map(task => {
-                    return <TaskCard task = {task}  /> ;
-                })
-              }
-            
-          </div>
+				</div> */}
+					<div>
+						<TimeCard />
+					</div>
+
+					<div>
+						<CurrentDesc  project={current} />
+					</div>
+
+					<div>
+						<CurrentRM project={current} />
+					</div>
         </div>
-	      </div>
-		): <h2 className="h4 tc ml5 mt5 fw1">Loading...</h2>
+
+		): <h2 className="h4 tc ml5 fw1">Loading...</h2>
 	}
 }
 

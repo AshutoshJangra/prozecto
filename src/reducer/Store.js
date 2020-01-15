@@ -3,6 +3,7 @@ import { projectReducer } from "./Project-Reducer";
 import { selectedProjectReducer } from "./Project-Reducer";
 import {currentReducer} from './Current-Reducer';
 import { authReducer } from "./auth-reducer";
+import { modalReducer } from "./modal-reducer";
 import thunk from "redux-thunk";
 
 export const init = () => {
@@ -10,7 +11,8 @@ export const init = () => {
     projectReducer,
     selectedProjectReducer,
     currentReducer,
-    authReducer
+    authReducer,
+    modalReducer
   });
   const store = redux.createStore(reducer, redux.applyMiddleware(thunk));
   return store;

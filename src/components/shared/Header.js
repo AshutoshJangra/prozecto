@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import * as actions from "../../actions";
 
 import profileIcon from "../../images/profileIcon.svg";
 import logoutIcon from "../../images/logoutIcon.png";
@@ -12,6 +13,10 @@ class Header extends Component {
   handleLogout = () => {
     this.props.logout();
   };
+
+  changeModalState = () => {
+      this.props.dispatch(actions.changeState()) ;
+  }
 
   renderAuthButtons = () => {
     const { isAuth } = this.props.auth;
@@ -42,8 +47,8 @@ class Header extends Component {
                   <Link className=" link" to="/">Blogs</Link>
                   {/* <Link className=" no-underline  dark-gray f6 fw6 pa1 pr4 link" to="/">My Profile</Link> */}
 
-                  <Link className="login-btn grow" to="/login">Log In</Link>
-                  <Link className="register-btn grow" to="/register">Sign Up</Link>
+                  <Link className="login-btn grow " to="/login" onClick={this.changeModalState} >Log In</Link>
+                  <Link className="register-btn grow " to="/register">Sign Up</Link>
               </div>
          </React.Fragment>
         );
