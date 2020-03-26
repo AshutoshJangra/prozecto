@@ -7,7 +7,7 @@ import Footer from "./components/shared/Footer";
 import "./App.css";
 
 import Dashboard from "./components/dashboard/Dashboard";
-
+import MainPage from "./components/mainPage/MainPage";
 
  import ModalWrapper from "./components/modal/ModalWrapper";
  import Modal from "./components/modal/Modal";
@@ -56,20 +56,20 @@ class App extends Component {
         <Router basename="/">
           <div className="App ">
 
-            <Header logout={this.logout} />
+            
 
 
-            <Route exact path="/" component={Dashboard} />
-            <Route exact path="/p/:slug" component={Dashboard} />
+            <Route exact path="/" component={MainPage} />
+            {/* <Route exact path="/p/:slug" component={Dashboard} />
             <ProtectedRoute exact path="/current" component={Dashboard} />
             <Route exact path="/finished" component={Dashboard} />
 
 
               <Route exact path="/login/" component={Dashboard} />
 
-              <LoggedInRoute exact path="/register" component={Dashboard} />
+              <LoggedInRoute exact path="/register" component={Dashboard} /> 
 
-           <Footer />
+           <Footer />*/}
 
           </div>
         </Router>

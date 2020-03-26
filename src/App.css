@@ -1,15 +1,16 @@
 
 * {
-    line-height: 1.81;
-    letter-spacing: 1.1px;
-    font-family: 'Barlow', sans-serif;
+    line-height: 1.67;
+    letter-spacing: 1.15px;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
 }
 
 .card{
-  box-shadow: rgba(19,15,235,0.1) 1px 2px 20px;
+  box-shadow: rgba(19,15,235,0.1) 1px 2px 50px;
 }
+
 .dark-theme {
     background-color: #1a2b34;
 }
@@ -28,32 +29,72 @@
 }
 
 
+/* showcase */
+.showcase {
+    background:url('./images/woman1.jpg');
+    opacity: 0.9;
+    position: relative;
+    min-height: 75vh;
+    width: 100%;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    overflow: auto;
+}
+.overlay {
+    background: linear-gradient(90deg, #001, #00000000);
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    /* z-index: 1; */
+    /*background-color: #6c63ff;*/
+    overflow: auto;
+}
+.bg-image {
+    position: absolute;
+    height: 80vh;
+    width: 100%;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    z-index: 2;
+    overflow: auto;
+}
+.main-showcase {
+    position: relative;
+    z-index: 3;
+    overflow: auto;
+}
+
 .header {
-    /*background-color: #1e2730 ;*/
-    background: #fff;
+    background-color: transparent ;
+    /*background: #fff;*/
     /*border-bottom: 0.5px solid #ccc;*/
     color:#fff;
     height: 9.5vh;
-    padding : 0 2vw;
+    padding : 0 5vw;
 }
 
 .login-btn {
-    background: #fff;
-    color: black;
-    width:99px;
+    /*background: #fff;*/
+    color: #fff;
+    width:70px;
     height:34px;
-    border:0.5px solid black;
+    /*border:0.5px solid black;*/
     border-radius:5px;
     text-align:center;
     text-decoration:none;
     font-size:0.8em;
-    padding-top:5px;
-    margin: 1px 10px;
+    padding-top:10px;
+    margin: 1px px;
 }
 
 .logout-btn{
-    background: #1e2730;
-    color: #E8FDF5;
+    /*background: #1e2730;*/
+    color: #fff;
     width:99px;
     height:34px;
     /*border:0.5px solid black;*/
@@ -66,7 +107,7 @@
     /*margin: 1px 10px;*/
 }
 .register-btn{
-    background: #000;
+    /*background: #000;*/
     color: white;
     width:100px;
     height:35px;
@@ -75,8 +116,8 @@
     text-align:center;
     text-decoration:none;
     font-size:0.8em;
-    padding-top:6px;
-    margin: 0 30px 0 10px;
+    padding-top:10px;
+    margin: 0 30px 0 0;
     font-weight:500;
 }
 
@@ -100,6 +141,14 @@
 
 /*main page */
 
+.filter{
+    transform:translateY(-50px);
+    margin: 0 6vw;
+}
+
+.listing-area{
+    margin:0 0 0 5vw;
+}
 .categories{
     background: #fff;
     height: 325px;
@@ -227,13 +276,13 @@
 
 .showcase{
     /*text-align:center;*/
-    padding: 2vh 2vw 5vh 2vw ;
-    width:98.7vw;
+    /*padding: 2vh 2vw 5vh 2vw ;
+    width:98.7vw;*/
     /*margin-left:auto;*/
     /*margin-right:auto;*/
     /*background: #fff;*/
     /*background:url('./images/dot-grid.png');*/
-    color:black;
+    /*color:black;*/
 }
 
 .showcase .tet{

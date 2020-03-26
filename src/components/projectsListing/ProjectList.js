@@ -19,17 +19,14 @@ class ProjectList extends Component {
 
     return !projects.length ? (
       <div className="tc ">
-        <div style={{width:'45vw' , height:'57vh', background:'#f9f9f9'}}>Loading...</div>
+        <div style={{}}>Loading...</div>
 
       </div>
     ) : (
       <div className="" >
-        <div className="mt3 ml0">
-            <FeaturedProject />
+        
 
-        </div>
-
-        <div className="project_lis mb4  ">
+        <div className="project_lis mb4 flex flex-wrap ma3  ">
             {projects.map(project => (
               <ProblemDisplay  project={project} key={project._id} />
             ))}

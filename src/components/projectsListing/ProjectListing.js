@@ -9,16 +9,16 @@ class ProjectListing extends Component {
 	render(){
 
 		return(
-        		<div className="flex justify-center">
-        			<div className="dn dib-l">
-        				<Categories />
-        			</div>
-							<div>
-        				<ProjectList />
-							</div>
-        			<div className="dn dib-ns">
-        				<MainRM />
-							</div>
+        		<div className="flex justify-end">
+        			
+        				<div style={{maxWidth:'50vw'}}>
+                                        <ProjectList />
+                                         </div>
+                                         <div className="dn dib-ns">
+                                        <MainRM />
+                                         </div>
+        			
+				
         		</div>
 		);
 	}

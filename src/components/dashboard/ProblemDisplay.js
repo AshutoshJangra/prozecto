@@ -23,27 +23,48 @@ const limitProjectTitle = (title, limit = 15) => {
 	return title;
 };
 
+const limitDesc= (desc, limit = 70) => {
+	const newDesc = [];
+	if (desc.length > limit) {
+		desc.split(" ").reduce((acc, cur) => {
+			if (acc + cur.length <= limit) {
+				newDesc.push(cur);
+			}
+			return acc + cur.length;
+		}, 0);
+
+		// return the result
+		return `${newDesc.join(" ")} ...`;
+	}
+	return desc;
+};
+
 class ProblemDisplay extends Component {
 	render() {
 		let { title, description,image, slug ,level , concept} = this.props.project;
 		title = limitProjectTitle(title);
+		description = limitDesc(description);
 
 
 		return (
 			<Link className="no-underline" to={`p/${slug}`}>
-				<div className="border-light card mv3 flex  bg-white">
+				<div className="card  mv3 flex mr5 ml0 bg-white" style={{width:'40.5vw' , height:'200px'}}>
 
-						<img src={image} alt="img" style={{width:'13vw' , height:'18.4vh'}} />
+					<div  style={{width:'15vw' ,background:`url(${image})`, backgroundSize:'cover'}} />
 
 
-					<div className=" pa3 ml3 ">
-						<h2 className=" b  navy" style={{fontSize:'1.1em'}}>{title}</h2>
+					<div className=" flex flex-column pa2 ph4 justify-between pb1 	center ml1 " style={{width:'25vw'}}>
+						<div className="">
+							<h2 className=" mid-gray fw6 f6 mv3" style={{}}>{title}</h2>
+							<h2 className=" gray fw4" style={{fontSize:'0.68em'}}>{description}</h2>
 
-						<div className="flex ">
-							<h4 className=" mid-gray mt2 "  style={{fontSize:'0.85em'}}>{level}</h4>
-							<h4 className=" mid-gray mt2 ml3 "  style={{fontSize:'0.85em'}}>{concept}</h4>
 						</div>
-						<h4 className="f7 purple mt2 ">200 points</h4>
+						<div className="flex mv3 ">
+							<h4 className="bg-light-green green ph3 pv1 br4 pt2 mr3 fw3"  style={{fontSize:'0.65em'}}>{level}</h4>
+							<h4 className="border-light dark-gray ph3 pv1 br4 mr3 fw3"  style={{fontSize:'0.65em'}}>{concept}</h4>
+						</div>	
+						
+						
 					</div>
 				</div>
 			</Link>

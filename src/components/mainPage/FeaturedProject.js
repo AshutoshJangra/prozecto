@@ -9,7 +9,7 @@ const FeaturedProject = () => {
 
 
 			<div className="main-showcase  pointer ">
-				<img src={photo} className="card cover" alt="showcase-photo" style={{width:'45vw' , height:'57vh' }} />
+				<img src={photo} className="card cover" alt="showcase-photo" style={{width:'55vw' , height:'57vh' }} />
 
 			</div>
 

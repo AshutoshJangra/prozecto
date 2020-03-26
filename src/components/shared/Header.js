@@ -29,12 +29,14 @@ class Header extends Component {
                       <Link className="  link" to="/">Contribute</Link>
                       <Link className="  link" to="/">Blogs</Link>
                        <Link className=" no-underline  dark-gray f6 fw6 pa1 pr4 link" to="/">My Profile</Link> */}
-                      <img src={profileIcon}  alt="profile" className=" mr4" style={{height:'30px'}} />
-
+                      
+                      <div className="flex">
+                        <h2 className="white f6 mt1">My Profile</h2>
+                      </div>
                       <button
-                              className=" bn ml3 bg-white mr2  "
+                              className=" bn ml4 bg-black b mr2  "
                               onClick={this.handleLogout}>
-                                      <img src={logoutIcon}  alt="logout" className="mt1 mr4" style={{height:'25px'}}/>
+                                     <h2 className="red f6 fw6">Log Out</h2>
 
                       </button>
               </div>
@@ -44,8 +46,8 @@ class Header extends Component {
       return(
          <React.Fragment>
               <div className=" flex  justify-between mr2">
-                  <Link className=" link" to="/">Blogs</Link>
-                  {/* <Link className=" no-underline  dark-gray f6 fw6 pa1 pr4 link" to="/">My Profile</Link> */}
+                  {/*<Link className=" link" to="/">Blogs</Link>
+                   <Link className=" no-underline  dark-gray f6 fw6 pa1 pr4 link" to="/">My Profile</Link> */}
 
                   <Link className="login-btn grow " to="/login" onClick={this.changeModalState} >Log In</Link>
                   <Link className="register-btn grow " to="/register">Sign Up</Link>
@@ -57,12 +59,12 @@ class Header extends Component {
 
   render() {
     return (
-      <nav className="header sticky flex justify-between">
+      <nav className="header  flex justify-between">
         <a
           className=" no-underline   flex items-center "
           href="/"
         >
-          <h2 className=" code navy" style={{ fontSize:'24px' , marginLeft:'5vw'  ,  letterSpacing:'0px'}}>Prozecto</h2>
+          <h2 className=" code white ml3" style={{ fontSize:'24px' ,  letterSpacing:'0px'}}>Prozecto</h2>
         </a>
         <div className="pa2  items-center">
           {this.renderAuthButtons()}
